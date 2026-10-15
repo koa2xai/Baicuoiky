@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Báo cáo & Thống kê - ShipFast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header: logo + lời chào -->
+  <header class="topbar">
+    <div class="logo"><strong>ShipFast</strong><small>Giao nhận, niềm tin vững</small></div>
+    <div class="hello">Xin chào, Admin ShipFast</div>
+  </header>
+
+  <div class="layout">
+    <!-- Sidebar: mục "Báo cáo & Thống kê" đang được chọn (class "active") -->
+    <nav class="sidebar">
+      <a href="#"><i></i>Tổng quan</a>
+      <a href="#"><i></i>Tra cứu vận đơn</a>
+      <a href="#"><i></i>Quản lý đơn hàng</a>
+      <a href="#"><i></i>Quản lý vận chuyển</a>
+      <a href="#"><i></i>Quản lý sự cố</a>
+      <a href="#" class="active" aria-current="page"><i></i>Báo cáo & Thống kê</a>
+      <a href="#"><i></i>Cài đặt</a>
+      <a href="#"><i></i>Quản trị hệ thống</a>
+    </nav>
+
+    <main class="content">
+      <!-- 1. Thanh bộ lọc (không có nút "Tạo đơn vận chuyển") -->
+      <section class="card filters">
+        <label>Loại báo cáo
+          <select id="periodType">
+            <option value="day">Theo ngày</option>
+            <option value="week">Theo tuần</option>
+            <option value="month" selected>Theo tháng</option>
+          </select>
+        </label>
+        <label>Thời gian <input id="periodValue" type="month"></label>
+        <label>Mã đơn <input id="orderCode" type="text" placeholder="Nhập mã đơn..."></label>
+        <label>Trạng thái
+          <select id="statusFilter">
+            <option value="all">Tất cả trạng thái</option>
+            <option value="incident">Gặp sự cố</option>
+            <option value="pending">Chờ lấy hàng</option>
+            <option value="shipping">Đang giao hàng</option>
+            <option value="delivered">Đã giao hàng</option>
+          </select>
+        </label>
+        <button id="clearBtn" class="btn-outline" type="button">Xóa bộ lọc</button>
+      </section>
+
+      <p id="message" class="message" hidden></p>
+
+      <!-- 2. Bốn thẻ thống kê -->
+      <section class="stats" id="stats"></section>
+
+      <!-- 3. Hai biểu đồ -->
+      <section class="charts">
+        <div class="card">
+          <div class="card-head">
+            <h2 id="barTitle">Tổng quan doanh thu</h2><span id="rangeLabel" class="muted"></span>
+          </div>
+          <div id="barChart" class="bar-chart"></div>
+          <p id="chartInfo" class="muted chart-info"></p>
+        </div>
+        <div class="card">
+          <h2>Tỷ lệ trạng thái đơn hàng</h2>
+          <div class="donut-wrap">
+            <div id="donut" class="donut">
+              <div class="donut-hole"><small>Tổng</small><b id="donutTotal">0</b></div>
+            </div>
+            <ul id="legend" class="legend"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Bảng danh sách đơn hàng -->
+      <section class="card">
+        <h2>Danh sách đơn hàng</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Mã đơn</th>
+                <th>Khách hàng</th>
+                <th>Khu vực</th>
+                <th>Ngày tạo đơn</th>
+                <th>Trạng thái</th>
+                <th class="right">Doanh thu ghi nhận</th>
+                <th>Dự kiến giao</th>
+                <th>Nhân viên phụ trách</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+        <div class="table-foot">
+          <span id="tableInfo" class="muted"></span>
+          <div class="pager">
+            <button id="prevBtn" class="btn-outline" type="button">Trước</button>
+            <span id="pageNo"></span>
+            <button id="nextBtn" class="btn-outline" type="button">Sau</button>
+          </div>
+        </div>
+        <p id="checkResult" class="muted small"></p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

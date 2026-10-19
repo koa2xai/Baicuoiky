@@ -5,41 +5,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Báo cáo & Thống kê - ShipFast</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="report.css">
+  <script src="../Chung/auth.js"></script>
 </head>
-<body>
+<body data-page="report">
   <!-- Header: logo + lời chào -->
-  <header class="topbar">
-    <div class="logo"><strong>ShipFast</strong><small>Giao nhận, niềm tin vững</small></div>
-    <div class="hello">Xin chào, Admin ShipFast</div>
-  </header>
+  
 
   <div class="layout">
     <!-- Sidebar: mục "Báo cáo & Thống kê" đang được chọn (class "active") -->
-    <nav class="sidebar">
-      <a href="#"><i></i>Tổng quan</a>
-      <a href="#"><i></i>Tra cứu vận đơn</a>
-      <a href="#"><i></i>Quản lý đơn hàng</a>
-      <a href="#"><i></i>Quản lý vận chuyển</a>
-      <a href="#"><i></i>Quản lý sự cố</a>
-      <a href="#" class="active" aria-current="page"><i></i>Báo cáo & Thống kê</a>
-      <a href="#"><i></i>Cài đặt</a>
-      <a href="#"><i></i>Quản trị hệ thống</a>
-    </nav>
+    
 
     <main class="content">
+      <h1 class="ttl page-title"><span data-ic="chart-no-axes-combined" data-s="26"></span>Báo cáo &amp; Thống kê</h1>
       <!-- 1. Thanh bộ lọc (không có nút "Tạo đơn vận chuyển") -->
       <section class="card filters">
-        <label>Loại báo cáo
+        <label><span class="lb"><span data-ic="chart-pie"></span>Loại báo cáo</span>
           <select id="periodType">
             <option value="day">Theo ngày</option>
             <option value="week">Theo tuần</option>
             <option value="month" selected>Theo tháng</option>
           </select>
         </label>
-        <label>Thời gian <input id="periodValue" type="month"></label>
-        <label>Mã đơn <input id="orderCode" type="text" placeholder="Nhập mã đơn..."></label>
-        <label>Trạng thái
+        <label><span class="lb"><span data-ic="calendar"></span>Thời gian</span> <input id="periodValue" type="month"></label>
+        <label><span class="lb"><span data-ic="search"></span>Mã đơn</span> <input id="orderCode" type="text" placeholder="Nhập mã đơn..."></label>
+        <label><span class="lb"><span data-ic="circle-check"></span>Trạng thái</span>
           <select id="statusFilter">
             <option value="all">Tất cả trạng thái</option>
             <option value="incident">Gặp sự cố</option>
@@ -109,7 +99,7 @@
     </main>
   </div>
 
-  <script src="script.js"></script>
+  <script src="report.js"></script>
 </body>
 
 </html>

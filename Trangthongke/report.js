@@ -1,8 +1,57 @@
+/* Layout dùng chung: sidebar 3 mục, nút ba gạch, icon Lucide (SVG nội tuyến) */
+const IC = {
+  "triangle-alert": '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/>',
+  "chart-no-axes-combined": '<path d="M12 16v5"/><path d="M16 14v7"/><path d="M20 10v11"/><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"/><path d="M4 18v3"/><path d="M8 14v7"/>',
+  "settings": '<path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/>',
+  "menu": '<path d="M4 12h16"/><path d="M4 18h16"/><path d="M4 6h16"/>',
+  "search": '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+  "calendar": '<path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>',
+  "banknote": '<rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/>',
+  "package": '<path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/>',
+  "circle-check": '<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>',
+  "chart-pie": '<path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z"/><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>',
+  "flag": '<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/>',
+  "file-text": '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>',
+  "user": '<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+  "log-out": '<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/>',
+  "lock": '<rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
+  "monitor": '<rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/>',
+  "shield-check": '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
+  "pencil": '<path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/>'
+};
+function ico(n, s) { s = s || 16; return '<svg class="ic-s" width="' + s + '" height="' + s + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (IC[n] || "") + '</svg>' }
+
+(function () {
+  const NAV = [
+  ["incident", "../Trangsuco/incident.html",      "Quản lý sự cố",      "triangle-alert"],
+  ["report",   "../Trangthongke/report.html",     "Báo cáo & Thống kê", "chart-no-axes-combined"],
+  ["settings", "../Trangcaidat/settings.html",    "Cài đặt",            "settings"]
+];
+  const B = document.body, page = B.dataset.page, S = window.SFAuth && SFAuth.get();
+  const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  B.classList.add("sf-init");
+  if (localStorage.getItem("sf_collapsed") === "1") B.classList.add("collapsed");
+  B.insertAdjacentHTML("afterbegin",
+    '<aside class="sf-side" id="sfSide"><div class="sf-logo"><b>S<span class="t">hipFast</span></b><small class="t">Giao nhận, niềm tin vững</small></div><nav aria-label="Menu chính">' +
+    NAV.map(n => '<a href="' + n[1] + '" data-tip="' + esc(n[2]) + '" title="' + esc(n[2]) + '"' + (n[0] === page ? ' class="on" aria-current="page"' : '') + '>' + ico(n[3], 18) + '<span class="t">' + esc(n[2]) + '</span></a>').join("") +
+    '</nav></aside><div class="sf-ov" id="sfOv"></div><header class="sf-head"><button class="sf-burger" id="sfBurger" aria-label="Đóng/mở menu" aria-controls="sfSide">' + ico("menu", 22) + '</button><span class="sf-hello">Xin chào, ' + esc(S ? S.name : "Admin ShipFast") + '</span></header>');
+  const mob = matchMedia("(max-width:820px)"), b = $id("sfBurger");
+  function $id(i) { return document.getElementById(i) }
+  const sync = () => b.setAttribute("aria-expanded", String(mob.matches ? B.classList.contains("open") : !B.classList.contains("collapsed")));
+  b.onclick = () => { if (mob.matches) B.classList.toggle("open"); else { B.classList.toggle("collapsed"); localStorage.setItem("sf_collapsed", B.classList.contains("collapsed") ? "1" : "0") } sync() };
+  $id("sfOv").onclick = () => { B.classList.remove("open"); sync() };
+  $id("sfSide").addEventListener("click", e => { if (e.target.closest("a")) B.classList.remove("open") });
+  addEventListener("keydown", e => { if (e.key === "Escape" && B.classList.contains("open")) $id("sfOv").click() });
+  mob.addEventListener("change", () => { B.classList.remove("open"); sync() });
+  document.querySelectorAll("[data-ic]").forEach(e => e.innerHTML = ico(e.dataset.ic, +e.dataset.s || 16));
+  sync(); requestAnimationFrame(() => requestAnimationFrame(() => B.classList.remove("sf-init")));
+})();
+
 const STATUS = {
-  incident:  { label: "Gặp sự cố",      color: "#ef4a5a" },
-  pending:   { label: "Chờ lấy hàng",   color: "#f5b731" },
-  shipping:  { label: "Đang giao hàng", color: "#3b82f6" },
-  delivered: { label: "Đã giao hàng",   color: "#17b97f" },
+  incident: { label: "Gặp sự cố", color: "#ef4a5a" },
+  pending: { label: "Chờ lấy hàng", color: "#f5b731" },
+  shipping: { label: "Đang giao hàng", color: "#3b82f6" },
+  delivered: { label: "Đã giao hàng", color: "#17b97f" },
 };
 const GROUPS = ["delivered", "shipping", "pending", "incident"]; // thứ tự hiển thị
 
@@ -133,13 +182,13 @@ function renderStats(s, prev) {
     return '<span class="' + (p >= 0 ? "up" : "down") + '">' + (p >= 0 ? "+" : "") + p.toFixed(1).replace(".", ",") + "% so với kỳ trước</span>";
   };
   const cards = [
-    { name: "Tổng doanh thu", cls: "c-teal", value: fmtMoney(s.revenue), note: change(s.revenue, prev.revenue) },
-    { name: "Tổng số đơn hàng", cls: "c-blue", value: s.count.toLocaleString("vi-VN"), note: change(s.count, prev.count) },
-    { name: "Đơn hàng đã giao", cls: "c-green", value: s.byStatus.delivered.toLocaleString("vi-VN"), note: fmtPct(s.byStatus.delivered, s.count) + " tổng số đơn" },
-    { name: "Đơn hàng gặp sự cố", cls: "c-red", value: s.byStatus.incident.toLocaleString("vi-VN"), note: fmtPct(s.byStatus.incident, s.count) + " tổng số đơn" },
+    { ic: "banknote", name: "Tổng doanh thu", cls: "c-teal", value: fmtMoney(s.revenue), note: change(s.revenue, prev.revenue) },
+    { ic: "package", name: "Tổng số đơn hàng", cls: "c-blue", value: s.count.toLocaleString("vi-VN"), note: change(s.count, prev.count) },
+    { ic: "circle-check", name: "Đơn hàng đã giao", cls: "c-green", value: s.byStatus.delivered.toLocaleString("vi-VN"), note: fmtPct(s.byStatus.delivered, s.count) + " tổng số đơn" },
+    { ic: "triangle-alert", name: "Đơn hàng gặp sự cố", cls: "c-red", value: s.byStatus.incident.toLocaleString("vi-VN"), note: fmtPct(s.byStatus.incident, s.count) + " tổng số đơn" },
   ];
   $("stats").innerHTML = cards.map(c =>
-    '<div class="stat"><div class="name ' + c.cls + '">' + c.name + '</div><div class="value">' + c.value + '</div><div class="note">' + c.note + "</div></div>").join("");
+    '<div class="stat"><div class="name ' + c.cls + '">' + ico(c.ic) + c.name + '</div><div class="value">' + c.value + '</div><div class="note">' + c.note + "</div></div>").join("");
 }
 
 function renderBarChart(buckets, range, s) {
@@ -180,7 +229,7 @@ function renderTable(orders) {
   $("tableBody").innerHTML = rows.length === 0
     ? '<tr><td colspan="8" class="empty-row">Không tìm thấy đơn hàng phù hợp</td></tr>'
     : rows.map(o => "<tr><td><a href=\"chi-tiet-don.html?ma=" + o.code + "\">" + o.code + "</a></td><td>" + o.customer + "</td><td>" + o.region + "</td><td>" + fmtDateTime(o.createdAt) +
-        '</td><td><span class="badge b-' + o.status + '">' + STATUS[o.status].label + '</span></td><td class="right">' + fmtMoney(calcRevenue(o)) + "</td><td>" + fmtDate(o.expected) + "</td><td>" + o.staff + "</td></tr>").join("");
+      '</td><td><span class="badge b-' + o.status + '">' + STATUS[o.status].label + '</span></td><td class="right">' + fmtMoney(calcRevenue(o)) + "</td><td>" + fmtDate(o.expected) + "</td><td>" + o.staff + "</td></tr>").join("");
   $("tableInfo").textContent = total === 0 ? "Hiển thị 0 đơn" : "Hiển thị " + (startIdx + 1) + "–" + (startIdx + rows.length) + " trong " + total + " đơn";
   $("pageNo").textContent = "Trang " + state.page + "/" + pages;
   $("prevBtn").disabled = state.page <= 1;

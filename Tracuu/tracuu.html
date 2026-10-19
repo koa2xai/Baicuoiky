@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tra cứu đơn hàng | ShipFast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="tracuu.css">
+</head>
+
+<body>
+
+  <!-- ===== MENU ===== -->
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="tra-cuu.html">ShipFast</a>
+      <nav class="nav" aria-label="Menu chính">
+        <a href="tra-cuu.html" class="active">Tra cứu</a>
+        <a href="../2-ho-tro/ho-tro.html">Hỗ trợ</a>
+        <a href="../3-tin-tuc/tin-tuc.html">Tin tức</a>
+      </nav>
+      <a class="btn" href="../4-dang-nhap/dang-nhap.html">Đăng nhập</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ===== TIÊU ĐỀ + Ô TÌM KIẾM ===== -->
+    <section class="page-title">
+      <h1>Tra cứu đơn hàng</h1>
+      <p>Nhập mã vận đơn để xem thông tin</p>
+
+      <form class="search" id="searchForm" role="search">
+        <input id="codeInput" type="text" placeholder="Nhập mã vận đơn" aria-label="Mã vận đơn"
+          autocomplete="off">
+        <button class="btn" type="submit">Tìm kiếm</button>
+      </form>
+      <p class="search-hint">Thử mã mẫu: <button type="button" id="sampleBtn">SF123456789VN</button></p>
+    </section>
+
+    <!-- ===== KẾT QUẢ TÌM KIẾM (Ban đầu trống) ===== -->
+    <section id="result" aria-live="polite">
+      <!-- Dữ liệu đơn hàng sẽ được JavaScript chèn vào đây sau khi bấm Tìm kiếm -->
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <h4>ShipFast</h4>
+        <p>Dịch vụ vận chuyển hàng hóa nhanh chóng và tin cậy.</p>
+      </div>
+      <div>
+        <h4>Liên kết</h4>
+        <a href="tra-cuu.html">Tra cứu</a>
+        <a href="../2-ho-tro/ho-tro.html">Hỗ trợ</a>
+        <a href="../3-tin-tuc/tin-tuc.html">Tin tức</a>
+      </div>
+      <div>
+        <h4>Liên hệ</h4>
+        <p>Email: hotro@shipfast.vn<br>Hotline: 1900 1234</p>
+      </div>
+    </div>
+    <div class="footer__copy">© 2026 ShipFast. All rights reserved.</div>
+  </footer>
+
+  <script src="tracuu.js"></script>
+</body>
+
+</html>

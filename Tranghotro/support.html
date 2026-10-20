@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hỗ trợ khách hàng - ShipFast</title>
+    <link rel="stylesheet" href="support.css">
+</head>
+<body>
+
+    <header>
+        <h2>ShipFast</h2>
+        <nav>
+            <a href="#">Giới thiệu</a>
+            <a href="#">Hỗ trợ</a>
+            <a href="#">Tin tức</a>
+            <a href="#">Đăng nhập</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Trung tâm hỗ trợ</h1>
+        <p class="intro">Chúng tôi luôn sẵn sàng giải đáp mọi thắc mắc về đơn hàng của bạn!</p>
+
+        <section class="contact">
+            <h2>Thông tin liên hệ</h2>
+            <p>Hotline: 1900 1234</p>
+            <p>Email: hotro@shipfast.vn</p>
+            <p>Thời gian: 07:00 - 21:00</p>
+        </section>
+
+        <div class="content">
+            
+<section class="faq">
+    <h2>Câu hỏi thường gặp</h2>
+
+    <details>
+        <summary>Làm thế nào để tra cứu đơn hàng?</summary>
+        <p>Nhập mã vận đơn vào ô tìm kiếm tại trang Tra cứu đơn hàng để xem toàn bộ hành trình và trạng thái hiện tại của đơn hàng.</p>
+    </details>
+
+    <details>
+        <summary>Thời gian giao hàng dự kiến là bao lâu?</summary>
+        <p>Thời gian giao hàng phụ thuộc vào loại dịch vụ và khoảng cách giữa nơi gửi và nơi nhận. Bạn có thể tra cứu đơn hàng để xem thời gian giao dự kiến.</p>
+    </details>
+
+    <details>
+        <summary>Tôi có thể đổi địa chỉ nhận hàng không?</summary>
+        <p>Hãy liên hệ bộ phận hỗ trợ qua hotline 1900 1234 hoặc email hotro@shipfast.vn và cung cấp mã vận đơn để được kiểm tra khả năng thay đổi địa chỉ.</p>
+    </details>
+
+    <details>
+        <summary>Phí vận chuyển và thu hộ (COD) được tính thế nào?</summary>
+        <p>Phí vận chuyển được tính dựa trên dịch vụ, khối lượng, kích thước và khoảng cách. COD là khoản tiền thu hộ từ người nhận theo yêu cầu của người gửi.</p>
+    </details>
+
+    <details>
+        <summary>Đơn hàng gặp sự cố hoặc thất lạc thì làm gì?</summary>
+        <p>Liên hệ hotline 1900 1234 hoặc email hotro@shipfast.vn và cung cấp mã vận đơn để nhân viên kiểm tra, hỗ trợ xử lý.</p>
+    </details>
+
+    <details>
+        <summary>Làm sao để liên hệ tài xế giao hàng?</summary>
+        <p>Kiểm tra thông tin tài xế tại trang Tra cứu đơn hàng nếu thông tin được cung cấp, hoặc liên hệ bộ phận hỗ trợ để được hướng dẫn.</p>
+    </details>
+</section>
+
+
+            <section class="support-form">
+                <h2>Gửi yêu cầu hỗ trợ</h2>
+                <p>Điền thông tin, chúng tôi sẽ phản hồi trong thời gian sớm nhất.</p>
+
+               
+<form id="supportForm">
+
+    <label for="name">Họ và tên *</label>
+    <input type="text" id="name" required>
+    <small class="error" id="nameError"></small>
+
+    <label for="email">Email *</label>
+    <input type="email" id="email" required>
+    <small class="error" id="emailError"></small>
+
+    <label for="tracking">Mã vận đơn</label>
+    <input type="text" id="tracking">
+
+    <label for="message">Nội dung yêu cầu *</label>
+    <textarea id="message" rows="5" required></textarea>
+    <small class="error" id="messageError"></small>
+
+    <label for="note">Ghi chú</label>
+    <textarea id="note" rows="3"></textarea>
+
+    <button type="submit" id="submitBtn" disabled>
+        Gửi yêu cầu
+    </button>
+
+</form>
+
+<p id="result" role="status" aria-live="polite"></p>
+
+
+                <p id="result"></p>
+            </section>
+        </div>
+    </main>
+
+    
+<footer class="site-footer">
+    <div class="footer-container">
+
+        <div class="footer-about">
+            <h2>ShipFast</h2>
+            <p>Dịch vụ vận chuyển hàng hóa nhanh chóng và tin cậy.</p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Liên kết</h3>
+            <a href="#">Giới thiệu</a>
+            <a href="#">Hỗ trợ</a>
+            <a href="#">Tin tức</a>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Liên hệ</h3>
+            <p>Email: hotro@shipfast.vn</p>
+            <p>Hotline: 1900 1234</p>
+            <p>Giờ làm việc: 07:00–21:00</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 ShipFast. All rights reserved.</p>
+    </div>
+</footer>
+
+    <script src="support.js"></script>
+</body>
+</html>

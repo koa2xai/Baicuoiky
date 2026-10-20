@@ -1,0 +1,355 @@
+
+/* Cai dat chung cho toan bo trang */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #333333;
+}
+
+/* Phan dau trang */
+header {
+    background-color: #1769aa;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Phan noi dung chinh */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #1769aa;
+    margin-bottom: 10px;
+}
+
+.intro {
+    text-align: center;
+    color: #666666;
+    margin-bottom: 30px;
+}
+
+/* Thong tin lien he */
+.contact {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.contact h2 {
+    color: #1769aa;
+    margin-top: 0;
+}
+
+.contact p {
+    margin: 10px 0;
+}
+
+/* Chia noi dung thanh hai cot */
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+/* Cau hoi thuong gap */
+.faq,
+.support-form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.faq h2,
+.support-form h2 {
+    color: #1769aa;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+details {
+    border-bottom: 1px solid #dddddd;
+    padding: 15px 0;
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+details p {
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Bieu mau ho tro */
+.support-form label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 8px;
+}
+
+.support-form input,
+.support-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+}
+
+.support-form input:focus,
+.support-form textarea:focus {
+    outline: none;
+    border-color: #1769aa;
+}
+
+.support-form textarea {
+    resize: vertical;
+}
+
+/* Nut gui yeu cau */
+.support-form button {
+    width: 100%;
+    background-color: #1769aa;
+    color: white;
+    padding: 13px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.support-form button:hover {
+    background-color: #10558c;
+}
+
+/* Thong bao sau khi gui */
+#result {
+    color: #16803c;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Chan trang */
+footer {
+    background-color: #1769aa;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Hien thi tren dien thoai */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 0 15px;
+    }
+}
+body {
+    background-color: #f4f7fb;
+}
+
+header {
+    background-color: #1769aa;
+    color: white;
+    padding: 20px;
+}
+
+/* Thong bao loi */
+.error {
+    display: block;
+    color: #d93025;
+    font-size: 13px;
+    margin-top: 5px;
+    min-height: 16px;
+}
+
+/* Vien do khi nhap sai */
+.support-form input.invalid,
+.support-form textarea.invalid {
+    border-color: #d93025;
+}
+
+/* Nut gui khi chua du thong tin */
+.support-form button:disabled {
+    background-color: #a0b8cc;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* Hieu ung cho tung cau hoi FAQ */
+.faq details {
+    border-bottom: 1px solid #e0e5eb;
+    padding: 15px 0;
+}
+
+/* An mui ten mac dinh cua trinh duyet */
+.faq summary {
+    list-style: none;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    padding-right: 25px;
+}
+
+/* An mui ten mac dinh tren mot so trinh duyet */
+.faq summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Tao mui ten rieng */
+.faq summary::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #1769aa;
+    font-size: 20px;
+}
+
+/* Doi thanh dau tru khi mo cau hoi */
+.faq details[open] summary::after {
+    content: "\2212";
+}
+
+/* Noi dung tra loi */
+.faq details p {
+    line-height: 1.7;
+    color: #555;
+    margin: 12px 0 0;
+    animation: faqAppear 0.25s ease;
+}
+
+/* Hieu ung hien thi cau tra loi */
+@keyframes faqAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+.site-footer {
+    margin-top: 50px;
+    background-color: #12304a;
+    color: white;
+    padding: 35px 6% 15px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-footer h2,
+.site-footer h3 {
+    margin-top: 0;
+}
+
+.site-footer p {
+    line-height: 1.7;
+}
+
+.footer-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid #496174;
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 12px;
+}
+
+/* Ho tro man hinh nho */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer {
+        padding: 25px 5% 12px;
+    }
+
+    input,
+    textarea {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}

@@ -64,6 +64,24 @@ const state = {
   pageSize: 5
 };
 
+// Giá trị mặc định (dùng cho nút "Xóa bộ lọc")
+const DEFAULTS = { type: state.type, values: Object.assign({}, state.values) };
+
+// Kiểm tra giá trị ô "Thời gian" (trình duyệt không hỗ trợ ô tháng/tuần sẽ cho gõ tay nên có thể sai định dạng)
+function isValidPeriod(type, v) {
+  if (typeof v !== "string") return false;
+  if (type === "day") {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(v)) return false;
+    const d = new Date(v + "T00:00:00Z");
+    return !isNaN(d) && d.toISOString().slice(0, 10) === v;   // loại ngày không tồn tại như 2026-02-30
+  }
+  if (type === "month") return /^\d{4}-(0[1-9]|1[0-2])$/.test(v);
+  const m = /^(\d{4})-W(\d{2})$/.exec(v);
+  if (!m || +m[2] < 1 || +m[2] > 53) return false;
+  return addDays(getRange("week", v).from, 3).slice(0, 4) === m[1];   // tuần 53 chỉ có ở năm có 53 tuần
+}
+const PERIOD_HINT = { day: "YYYY-MM-DD", week: "YYYY-Www (vd 2026-W42)", month: "YYYY-MM (vd 2026-10)" };
+
 /* ---------- 4. Lọc & tổng hợp ---------- */
 function filterOrders(range, code, status) {
   const keyword = code.trim().toLowerCase();
@@ -222,12 +240,36 @@ function update() {
 function setPeriodInput() {
   periodInput.type = state.type === "day" ? "date" : state.type;   // date | week | month
   periodInput.value = state.values[state.type];
+  periodInput.placeholder = PERIOD_HINT[state.type];
+}
+function showMessage(text) {
+  $("message").textContent = text;
+  $("message").className = "message error";
+  $("message").hidden = false;
 }
 $("periodType").addEventListener("change", e => { state.type = e.target.value; state.page = 1; setPeriodInput(); update(); });
-periodInput.addEventListener("change", e => { if (e.target.value) { state.values[state.type] = e.target.value; state.page = 1; update(); } });
+periodInput.addEventListener("change", e => {
+  const v = e.target.value.trim();
+  if (isValidPeriod(state.type, v)) {
+    state.values[state.type] = v; state.page = 1; update();
+  } else {
+    periodInput.value = state.values[state.type];   // giữ lại kỳ đang xem
+    update();
+    if (v) showMessage("Thời gian không hợp lệ. Vui lòng nhập theo định dạng " + PERIOD_HINT[state.type] + ".");
+  }
+});
 $("orderCode").addEventListener("input", () => { state.page = 1; update(); });
 $("statusFilter").addEventListener("change", () => { state.page = 1; update(); });
-$("clearBtn").addEventListener("click", () => { $("orderCode").value = ""; $("statusFilter").value = "all"; state.page = 1; update(); });
+$("clearBtn").addEventListener("click", () => {
+  $("orderCode").value = "";
+  $("statusFilter").value = "all";
+  state.type = DEFAULTS.type;
+  state.values = Object.assign({}, DEFAULTS.values);
+  $("periodType").value = state.type;
+  setPeriodInput();
+  state.page = 1;
+  update();
+});
 $("prevBtn").addEventListener("click", () => { state.page--; update(); });
 $("nextBtn").addEventListener("click", () => { state.page++; update(); });
 // Rê chuột / bấm vào cột biểu đồ -> hiện chi tiết

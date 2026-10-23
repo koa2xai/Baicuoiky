@@ -171,3 +171,10 @@ body.pub {
 /* ---------- Logo ---------- */
 .pub-logo { display: inline-flex; align-items: center; gap: 10px; }
 .pub-logo img { display: block; width: 36px; height: 36px; flex: none; }
+
+/* ---------- Icon (SVG nét mảnh, cùng kiểu với các trang quản trị) ---------- */
+.i { width: 1.1em; height: 1.1em; flex: none; vertical-align: -0.18em; margin-right: .4em; }
+.i.i-r { margin: 0 0 0 .4em; }
+.pub-title h1 .i,
+#viewList > h1 .i { width: .8em; height: .8em; vertical-align: -0.04em; margin-right: .3em; }
+.pub-form label .i { width: 1em; height: 1em; vertical-align: -0.14em; }

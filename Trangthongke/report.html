@@ -2,34 +2,113 @@
 <html lang="vi">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Báo cáo & Thống kê - ShipFast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="report.css">
   <script src="../Chung/auth.js"></script>
 </head>
-<body data-page="report">
-  <!-- Header: logo + lời chào -->
-  
+
+<body data-page="report" class="sf-init">
+  <aside class="sf-side animate__animated animate__fadeIn" id="sfSide">
+    <div class="sf-logo"><b>S<span class="t">hipFast</span></b><small class="t">Giao nhận, niềm tin vững</small></div>
+    <nav aria-label="Menu chính">
+      <a href="../Trangsuco/incident.html" data-tip="Quản lý sự cố" title="Quản lý sự cố"><svg class="ic-s" width="18"
+          height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+          <path d="M12 9v4" />
+          <path d="M12 17h.01" />
+        </svg><span class="t">Quản lý sự cố</span></a>
+      <a href="../Trangthongke/report.html" data-tip="Báo cáo &amp; Thống kê" title="Báo cáo &amp; Thống kê" class="on"
+        aria-current="page"><svg class="ic-s" width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 16v5" />
+          <path d="M16 14v7" />
+          <path d="M20 10v11" />
+          <path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15" />
+          <path d="M4 18v3" />
+          <path d="M8 14v7" />
+        </svg><span class="t">Báo cáo &amp; Thống kê</span></a>
+      <a href="../Trangcaidat/settings.html" data-tip="Cài đặt" title="Cài đặt"><svg class="ic-s" width="18" height="18"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path
+            d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+          <circle cx="12" cy="12" r="3" />
+        </svg><span class="t">Cài đặt</span></a>
+      <a href="../Tracuu/tracuu.html" data-tip="Trang tra cứu" title="Trang tra cứu"><svg class="ic-s" width="18"
+          height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.3-4.3" />
+        </svg><span class="t">Trang tra cứu</span></a>
+    </nav>
+  </aside>
+  <div class="sf-ov" id="sfOv"></div>
+  <header class="sf-head animate__animated animate__fadeInDown">
+    <button class="sf-burger" id="sfBurger" aria-label="Đóng/mở menu" aria-controls="sfSide"><svg class="ic-s"
+        width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 12h16" />
+        <path d="M4 18h16" />
+        <path d="M4 6h16" />
+      </svg></button>
+    <span class="sf-hello">Xin chào, <span id="adminName">Admin ShipFast</span></span>
+  </header>
 
   <div class="layout">
-    <!-- Sidebar: mục "Báo cáo & Thống kê" đang được chọn (class "active") -->
-    
-
     <main class="content">
-      <h1 class="ttl page-title"><span data-ic="chart-no-axes-combined" data-s="26"></span>Báo cáo &amp; Thống kê</h1>
-      <!-- 1. Thanh bộ lọc (không có nút "Tạo đơn vận chuyển") -->
-      <section class="card filters">
-        <label><span class="lb"><span data-ic="chart-pie"></span>Loại báo cáo</span>
+      <h1 class="ttl page-title animate__animated animate__fadeInDown"><svg class="ic-s" width="26" height="26"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 16v5" />
+          <path d="M16 14v7" />
+          <path d="M20 10v11" />
+          <path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15" />
+          <path d="M4 18v3" />
+          <path d="M8 14v7" />
+        </svg>Báo cáo &amp; Thống kê</h1>
+
+      <!-- 1. Thanh bộ lọc -->
+      <section class="card filters animate__animated animate__fadeInDown" style="animation-delay:.05s">
+        <label><span class="lb"><svg class="ic-s" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path
+                d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z" />
+              <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+            </svg>Loại báo cáo</span>
           <select id="periodType">
             <option value="day">Theo ngày</option>
             <option value="week">Theo tuần</option>
             <option value="month" selected>Theo tháng</option>
           </select>
         </label>
-        <label><span class="lb"><span data-ic="calendar"></span>Thời gian</span> <input id="periodValue" type="month"></label>
-        <label><span class="lb"><span data-ic="search"></span>Mã đơn</span> <input id="orderCode" type="text" placeholder="Nhập mã đơn..."></label>
-        <label><span class="lb"><span data-ic="circle-check"></span>Trạng thái</span>
+        <label><span class="lb"><svg class="ic-s" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 2v4" />
+              <path d="M16 2v4" />
+              <rect width="18" height="18" x="3" y="4" rx="2" />
+              <path d="M3 10h18" />
+            </svg>Thời gian</span>
+          <input id="periodValue" type="month" value="2026-10" data-day="2026-10-15" data-week="2026-W42"
+            data-month="2026-10">
+        </label>
+        <label><span class="lb"><svg class="ic-s" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>Mã đơn</span> <input id="orderCode" type="text" placeholder="Nhập mã đơn..."></label>
+        <label><span class="lb"><svg class="ic-s" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>Trạng thái</span>
           <select id="statusFilter">
             <option value="all">Tất cả trạng thái</option>
             <option value="incident">Gặp sự cố</option>
@@ -43,31 +122,84 @@
 
       <p id="message" class="message" hidden></p>
 
-      <!-- 2. Bốn thẻ thống kê -->
-      <section class="stats" id="stats"></section>
+      <!-- 2. Bốn thẻ thống kê (JS chỉ điền số liệu) -->
+      <section class="stats" id="stats">
+        <div class="stat animate__animated animate__fadeInUp">
+          <div class="name c-teal"><svg class="ic-s" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect width="20" height="12" x="2" y="6" rx="2" />
+              <circle cx="12" cy="12" r="2" />
+              <path d="M6 12h.01M18 12h.01" />
+            </svg>Tổng doanh thu</div>
+          <div class="value" data-stat="revenue">0</div>
+          <div class="note"><span data-note="revenue"></span></div>
+        </div>
+        <div class="stat animate__animated animate__fadeInUp" style="animation-delay:0.08s">
+          <div class="name c-blue"><svg class="ic-s" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m7.5 4.27 9 5.15" />
+              <path
+                d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+              <path d="m3.3 7 8.7 5 8.7-5" />
+              <path d="M12 22V12" />
+            </svg>Tổng số đơn hàng</div>
+          <div class="value" data-stat="count">0</div>
+          <div class="note"><span data-note="count"></span></div>
+        </div>
+        <div class="stat animate__animated animate__fadeInUp" style="animation-delay:0.16s">
+          <div class="name c-green"><svg class="ic-s" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>Đơn hàng đã giao</div>
+          <div class="value" data-stat="delivered">0</div>
+          <div class="note"><span data-note="delivered"></span></div>
+        </div>
+        <div class="stat animate__animated animate__fadeInUp" style="animation-delay:0.24s">
+          <div class="name c-red"><svg class="ic-s" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+              <path d="M12 9v4" />
+              <path d="M12 17h.01" />
+            </svg>Đơn hàng gặp sự cố</div>
+          <div class="value" data-stat="incident">0</div>
+          <div class="note"><span data-note="incident"></span></div>
+        </div>
+      </section>
 
       <!-- 3. Hai biểu đồ -->
       <section class="charts">
-        <div class="card">
+        <div class="card animate__animated animate__fadeInUp" style="animation-delay:.08s">
           <div class="card-head">
             <h2 id="barTitle">Tổng quan doanh thu</h2><span id="rangeLabel" class="muted"></span>
           </div>
-          <div id="barChart" class="bar-chart"></div>
-          <p id="chartInfo" class="muted chart-info"></p>
+          <div id="barChart" class="bar-chart">
+            <div class="empty-chart" id="emptyChart" hidden></div>
+          </div>
+          <p id="chartInfo" class="muted chart-info">Rê chuột hoặc bấm vào một cột để xem doanh thu và số đơn.</p>
         </div>
-        <div class="card">
+        <div class="card animate__animated animate__fadeInUp" style="animation-delay:.18s">
           <h2>Tỷ lệ trạng thái đơn hàng</h2>
           <div class="donut-wrap">
             <div id="donut" class="donut">
               <div class="donut-hole"><small>Tổng</small><b id="donutTotal">0</b></div>
             </div>
-            <ul id="legend" class="legend"></ul>
+            <ul id="legend" class="legend">
+              <li data-status="delivered"><span class="dot d-delivered"></span><span>Đã giao hàng: <b data-count>0
+                    đơn</b> — <span data-pct>0,0%</span></span></li>
+              <li data-status="shipping"><span class="dot d-shipping"></span><span>Đang giao hàng: <b data-count>0
+                    đơn</b> — <span data-pct>0,0%</span></span></li>
+              <li data-status="pending"><span class="dot d-pending"></span><span>Chờ lấy hàng: <b data-count>0 đơn</b> —
+                  <span data-pct>0,0%</span></span></li>
+              <li data-status="incident"><span class="dot d-incident"></span><span>Gặp sự cố: <b data-count>0 đơn</b> —
+                  <span data-pct>0,0%</span></span></li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <!-- 4. Bảng danh sách đơn hàng -->
-      <section class="card">
+      <!-- 4. Bảng danh sách đơn hàng (dữ liệu nằm trong HTML, JS chỉ lọc và phân trang) -->
+      <section class="card animate__animated animate__fadeInUp" style="animation-delay:.28s">
         <h2>Danh sách đơn hàng</h2>
         <div class="table-wrap">
           <table>
@@ -83,7 +215,95 @@
                 <th>Nhân viên phụ trách</th>
               </tr>
             </thead>
-            <tbody id="tableBody"></tbody>
+            <tbody id="tableBody">
+              <tr data-code="SF123456789VN" data-status="delivered" data-created="2026-10-01 08:00"
+                data-revenue="30000">
+                <td><a href="../Trangsuco/incident.html#/su-co/SF123456789VN">SF123456789VN</a></td>
+                <td>Nguyễn Văn A</td>
+                <td>Hà Nội</td>
+                <td>01/10/2026 08:00</td>
+                <td><span class="badge b-delivered">Đã giao hàng</span></td>
+                <td class="right">30.000 ₫</td>
+                <td>03/10/2026</td>
+                <td>Trần Minh Đức</td>
+              </tr>
+              <tr data-code="SF123456790VN" data-status="shipping" data-created="2026-10-05 10:15" data-revenue="0">
+                <td><a href="../Trangsuco/incident.html#/su-co/SF123456790VN">SF123456790VN</a></td>
+                <td>Công ty TNHH ABC</td>
+                <td>Đà Nẵng</td>
+                <td>05/10/2026 10:15</td>
+                <td><span class="badge b-shipping">Đang giao hàng</span></td>
+                <td class="right">0 ₫</td>
+                <td>07/10/2026</td>
+                <td>Lê Thị Hương</td>
+              </tr>
+              <tr data-code="SF123456791VN" data-status="delivered" data-created="2026-10-08 12:30"
+                data-revenue="35000">
+                <td><a href="../Trangsuco/incident.html#/su-co/SF123456791VN">SF123456791VN</a></td>
+                <td>Phạm Thị B</td>
+                <td>TP. Hồ Chí Minh</td>
+                <td>08/10/2026 12:30</td>
+                <td><span class="badge b-delivered">Đã giao hàng</span></td>
+                <td class="right">35.000 ₫</td>
+                <td>10/10/2026</td>
+                <td>Nguyễn Hoàng Nam</td>
+              </tr>
+              <tr data-code="SF123456792VN" data-status="pending" data-created="2026-10-10 14:45" data-revenue="0">
+                <td><a href="../Trangsuco/incident.html#/su-co/SF123456792VN">SF123456792VN</a></td>
+                <td>Công ty XYZ</td>
+                <td>Hải Phòng</td>
+                <td>10/10/2026 14:45</td>
+                <td><span class="badge b-pending">Chờ lấy hàng</span></td>
+                <td class="right">0 ₫</td>
+                <td>12/10/2026</td>
+                <td>Phạm Quốc Anh</td>
+              </tr>
+              <tr data-code="SF123456793VN" data-status="delivered" data-created="2026-10-12 16:00"
+                data-revenue="35000">
+                <td><a href="../Trangsuco/incident.html#/su-co/SF123456793VN">SF123456793VN</a></td>
+                <td>Trần Văn C</td>
+                <td>Cần Thơ</td>
+                <td>12/10/2026 16:00</td>
+                <td><span class="badge b-delivered">Đã giao hàng</span></td>
+                <td class="right">35.000 ₫</td>
+                <td>14/10/2026</td>
+                <td>Trần Minh Đức</td>
+              </tr>
+              <tr data-code="SF123456794VN" data-status="incident" data-created="2026-10-14 18:15" data-revenue="0">
+                <td><a href="../Trangsuco/incident.html#/su-co/SF123456794VN">SF123456794VN</a></td>
+                <td>Lê Thị D</td>
+                <td>Hà Nội</td>
+                <td>14/10/2026 18:15</td>
+                <td><span class="badge b-incident">Gặp sự cố</span></td>
+                <td class="right">0 ₫</td>
+                <td>16/10/2026</td>
+                <td>Lê Thị Hương</td>
+              </tr>
+              <tr data-code="SF123456795VN" data-status="delivered" data-created="2026-10-15 20:30"
+                data-revenue="70000">
+                <td><a href="../Trangsuco/incident.html#/su-co/SF123456795VN">SF123456795VN</a></td>
+                <td>Hoàng Văn Nam</td>
+                <td>Đà Nẵng</td>
+                <td>15/10/2026 20:30</td>
+                <td><span class="badge b-delivered">Đã giao hàng</span></td>
+                <td class="right">70.000 ₫</td>
+                <td>17/10/2026</td>
+                <td>Nguyễn Hoàng Nam</td>
+              </tr>
+              <tr data-code="SF123456796VN" data-status="shipping" data-created="2026-10-15 22:45" data-revenue="0">
+                <td><a href="../Trangsuco/incident.html#/su-co/SF123456796VN">SF123456796VN</a></td>
+                <td>Công ty 123</td>
+                <td>TP. Hồ Chí Minh</td>
+                <td>15/10/2026 22:45</td>
+                <td><span class="badge b-shipping">Đang giao hàng</span></td>
+                <td class="right">0 ₫</td>
+                <td>17/10/2026</td>
+                <td>Phạm Quốc Anh</td>
+              </tr>
+              <tr id="emptyRow" hidden>
+                <td colspan="8" class="empty-row">Không tìm thấy đơn hàng phù hợp</td>
+              </tr>
+            </tbody>
           </table>
         </div>
         <div class="table-foot">
@@ -99,6 +319,17 @@
     </main>
   </div>
 
+  <!-- Mẫu một cột và một vạch chia của biểu đồ: JS chỉ nhân bản các mẫu này -->
+  <template id="barTpl">
+    <div class="bar-col">
+      <div class="bar"></div><span></span>
+    </div>
+  </template>
+  <template id="tickTpl">
+    <div class="gridline"></div>
+    <div class="ytick"></div>
+  </template>
+  <script src="../Chung/admin.js"></script>
   <script src="report.js"></script>
 </body>
 

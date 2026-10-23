@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tin tức – ShipFast</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="../Chung/site.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="pub">
+  <header class="pub-header animate__animated animate__fadeInDown">
+    <div class="pub-header__inner">
+      <a class="pub-logo" href="../Tracuu/tracuu.html">ShipFast</a>
+      <nav class="pub-nav" aria-label="Menu chính">
+        <a href="../Tracuu/tracuu.html">Tra cứu</a>
+        <a href="../Tranghotro/support.html">Hỗ trợ</a>
+        <a href="../Trangtintuc/index.html" class="active" aria-current="page">Tin tức</a>
+      </nav>
+      <a class="pub-btn" href="../Trangdangnhap/login.html">Đăng nhập</a>
+    </div>
+  </header>
+  <main id="app" class="pub-main">
+
+    <!-- ===== DANH SÁCH TIN (trang 1 và 2 dùng chung, JS chỉ ẩn/hiện thẻ theo data-page) ===== -->
+    <section id="viewList">
+      <h1 class="animate__animated animate__fadeInDown">Tin tức</h1>
+      <p class="sub animate__animated animate__fadeInUp" style="animation-delay:.10s">Cập nhật mới nhất từ ShipFast và
+        ngành vận chuyển</p>
+
+      <article class="feat animate__animated animate__fadeInUp" style="animation-delay:.15s">
+        <a href="#shipfast-theo-doi-hanh-trinh"><img class="ph" src="images/map.svg"
+            alt="ShipFast ra mắt tính năng theo dõi hành trình theo thời gian thực"></a>
+        <div class="tx">
+          <span class="chip">Nổi bật</span>
+          <h2><a href="#shipfast-theo-doi-hanh-trinh">ShipFast ra mắt tính năng theo dõi hành trình theo thời gian
+              thực</a></h2>
+          <p>Khách hàng có thể xem vị trí tài xế và thời gian giao dự kiến ngay trên bản đồ.</p>
+          <span class="meta">12/10/2026 · 5 phút đọc</span>
+          <a class="btn" href="#shipfast-theo-doi-hanh-trinh">Đọc tiếp</a>
+        </div>
+      </article>
+
+      <h3 class="sec animate__animated animate__fadeInLeft">Tin mới nhất</h3>
+      <div class="grid">
+        <a class="card animate__animated animate__fadeInUp" style="animation-delay:0.00s"
+          href="#mo-rong-mang-luoi-giao-hang" data-page="1">
+          <div class="im"><img class="ph" src="images/net.svg"
+              alt="Mở rộng mạng lưới giao hàng đến thêm nhiều tỉnh thành"></div>
+          <div class="bd"><span class="cat">Công ty</span>
+            <h4>Mở rộng mạng lưới giao hàng đến thêm nhiều tỉnh thành</h4><span class="meta">10/10/2026</span>
+            <p>Thêm điểm tiếp nhận và trung tâm phân phối giúp rút ngắn thời gian giao hàng liên tỉnh.</p>
+          </div>
+        </a>
+        <a class="card animate__animated animate__fadeInUp" style="animation-delay:0.10s" href="#tra-cuu-ma-van-don"
+          data-page="1">
+          <div class="im"><img class="ph" src="images/trace.svg"
+              alt="Cách tra cứu mã vận đơn nhanh chóng chỉ trong 3 bước"></div>
+          <div class="bd"><span class="cat">Hướng dẫn</span>
+            <h4>Cách tra cứu mã vận đơn nhanh chóng chỉ trong 3 bước</h4><span class="meta">08/10/2026</span>
+            <p>Hướng dẫn xem trạng thái đơn hàng trên điện thoại hoặc máy tính chỉ với vài thao tác.</p>
+          </div>
+        </a>
+        <a class="card animate__animated animate__fadeInUp" style="animation-delay:0.20s" href="#dong-goi-hang-hoa"
+          data-page="1">
+          <div class="im"><img class="ph" src="images/pack.svg"
+              alt="Đóng gói hàng hóa đúng cách để tránh hư hỏng khi vận chuyển"></div>
+          <div class="bd"><span class="cat">Mẹo vận chuyển</span>
+            <h4>Đóng gói hàng hóa đúng cách để tránh hư hỏng khi vận chuyển</h4><span class="meta">05/10/2026</span>
+            <p>Những nguyên tắc đơn giản giúp kiện hàng của bạn đến nơi nguyên vẹn.</p>
+          </div>
+        </a>
+        <a class="card animate__animated animate__fadeInUp" style="animation-delay:0.30s" href="#lich-giao-nhan"
+          data-page="1">
+          <div class="im"><img class="ph" src="images/cal.svg" alt="Lịch giao nhận hàng trong dịp cao điểm cuối năm">
+          </div>
+          <div class="bd"><span class="cat">Thông báo</span>
+            <h4>Lịch giao nhận hàng trong dịp cao điểm cuối năm</h4><span class="meta">03/10/2026</span>
+            <p>Lưu ý về thời gian xử lý đơn và cách gửi hàng sớm để kịp nhận trước dịp lễ.</p>
+          </div>
+        </a>
+        <a class="card animate__animated animate__fadeInUp" style="animation-delay:0.40s" href="#chinh-sach-boi-thuong"
+          data-page="1">
+          <div class="im"><img class="ph" src="images/sup.svg" alt="Chính sách bồi thường khi đơn hàng gặp sự cố"></div>
+          <div class="bd"><span class="cat">Công ty</span>
+            <h4>Chính sách bồi thường khi đơn hàng gặp sự cố</h4><span class="meta">30/09/2026</span>
+            <p>Tìm hiểu các trường hợp được hỗ trợ và quy trình gửi yêu cầu bồi thường.</p>
+          </div>
+        </a>
+        <a class="card animate__animated animate__fadeInUp" style="animation-delay:0.00s" href="#huong-dan-cod"
+          data-page="2">
+          <div class="im"><img class="ph" src="images/cod.svg" alt="Thu hộ (COD) hoạt động như thế nào và cần lưu ý gì">
+          </div>
+          <div class="bd"><span class="cat">Hướng dẫn</span>
+            <h4>Thu hộ (COD) hoạt động như thế nào và cần lưu ý gì</h4><span class="meta">27/09/2026</span>
+            <p>Giải thích quy trình thu tiền khi giao hàng và đối soát tiền về cho người bán.</p>
+          </div>
+        </a>
+      </div>
+
+      <nav class="pg animate__animated animate__fadeIn" style="animation-delay:.20s" aria-label="Phân trang">
+        <a href="#" data-page="1">1</a>
+        <a href="#trang-2" data-page="2">2</a>
+      </nav>
+    </section>
+
+    <!-- ===== CÁC BÀI VIẾT (mỗi bài một khối, JS chỉ hiện đúng bài theo địa chỉ #slug) ===== -->
+    <!-- ===== BÀI: shipfast-theo-doi-hanh-trinh ===== -->
+    <div class="art" data-slug="shipfast-theo-doi-hanh-trinh"
+      data-title="ShipFast ra mắt tính năng theo dõi hành trình theo thời gian thực" hidden>
+      <a class="back" href="#">← Quay lại Tin tức</a>
+      <span class="chip">Công nghệ</span>
+      <h1 class="animate__animated animate__fadeInUp" style="animation-delay:.05s">ShipFast ra mắt tính năng theo dõi
+        hành trình theo thời gian thực</h1>
+      <div class="meta">12/10/2026 · 5 phút đọc</div>
+      <div class="hero animate__animated animate__zoomIn" style="animation-delay:.10s"><img class="ph"
+          src="images/map.svg" alt="ShipFast ra mắt tính năng theo dõi hành trình theo thời gian thực"></div>
+      <p class="lead animate__animated animate__fadeInUp" style="animation-delay:.05s">Từ nay, bạn không còn phải gọi
+        điện hỏi “hàng đến đâu rồi?”. Tính năng theo dõi hành trình thời gian thực cho phép xem đơn hàng di chuyển trực
+        tiếp trên bản đồ.</p>
+      <h2>Tính năng hoạt động ra sao</h2>
+      <p>Sau khi tài xế nhận đơn, vị trí được cập nhật liên tục và hiển thị trên bản đồ trong trang tra cứu. Bạn thấy rõ
+        tuyến đường, điểm dừng gần nhất và thời gian giao dự kiến.</p>
+      <p>Thời gian dự kiến được tính lại theo tình hình giao thông, nên con số luôn sát với thực tế hơn so với mốc cố
+        định như trước.</p>
+      <h2>Lợi ích cho người gửi và người nhận</h2>
+      <p>Người nhận chủ động sắp xếp thời gian để có mặt đúng lúc. Người gửi giảm số cuộc gọi hỏi thăm và dễ trao đổi
+        hơn với khách hàng của mình.</p>
+      <h2>Cách sử dụng</h2>
+      <p>Nhập mã vận đơn tại mục tra cứu, chọn “Xem trên bản đồ”. Tính năng áp dụng cho đơn đang trong giai đoạn giao
+        đến người nhận.</p>
+      <p class="note">Nội dung và hình minh họa chỉ phục vụ bản demo, không phải thông báo chính thức của doanh nghiệp.
+      </p>
+      <a class="btn" href="#">Quay lại Tin tức</a>
+    </div>
+
+    <!-- ===== BÀI: mo-rong-mang-luoi-giao-hang ===== -->
+    <div class="art" data-slug="mo-rong-mang-luoi-giao-hang"
+      data-title="Mở rộng mạng lưới giao hàng đến thêm nhiều tỉnh thành" hidden>
+      <a class="back" href="#">← Quay lại Tin tức</a>
+      <span class="chip">Công ty</span>
+      <h1 class="animate__animated animate__fadeInUp" style="animation-delay:.05s">Mở rộng mạng lưới giao hàng đến thêm
+        nhiều tỉnh thành</h1>
+      <div class="meta">10/10/2026 · 4 phút đọc</div>
+      <div class="hero animate__animated animate__zoomIn" style="animation-delay:.10s"><img class="ph"
+          src="images/net.svg" alt="Mở rộng mạng lưới giao hàng đến thêm nhiều tỉnh thành"></div>
+      <p class="lead animate__animated animate__fadeInUp" style="animation-delay:.05s">ShipFast bổ sung nhiều tuyến và
+        trung tâm phân phối mới, giúp hàng hóa đến tay người nhận ở các tỉnh thành nhanh hơn.</p>
+      <h2>Điều gì thay đổi</h2>
+      <p>Các trung tâm phân phối mới đóng vai trò điểm trung chuyển, giảm số lần chuyển tải và rút ngắn quãng đường của
+        mỗi kiện hàng.</p>
+      <p>Khu vực xa trung tâm được bổ sung tuyến giao trực tiếp, hạn chế tình trạng chờ gom đủ hàng mới xuất phát.</p>
+      <h2>Lợi ích cho khách hàng</h2>
+      <p>Thời gian giao dự kiến giảm ở nhiều tuyến liên tỉnh, đồng thời cước phí được hiển thị rõ ngay khi tạo đơn.</p>
+      <h2>Kế hoạch tiếp theo</h2>
+      <p>Mạng lưới sẽ tiếp tục được rà soát theo nhu cầu thực tế. Danh sách khu vực áp dụng được cập nhật tại mục Hỗ
+        trợ.</p>
+      <p class="note">Nội dung và hình minh họa chỉ phục vụ bản demo, không phải thông báo chính thức của doanh nghiệp.
+      </p>
+      <a class="btn" href="#">Quay lại Tin tức</a>
+    </div>
+
+    <!-- ===== BÀI: tra-cuu-ma-van-don ===== -->
+    <div class="art" data-slug="tra-cuu-ma-van-don" data-title="Cách tra cứu mã vận đơn nhanh chóng chỉ trong 3 bước"
+      hidden>
+      <a class="back" href="#">← Quay lại Tin tức</a>
+      <span class="chip">Hướng dẫn</span>
+      <h1 class="animate__animated animate__fadeInUp" style="animation-delay:.05s">Cách tra cứu mã vận đơn nhanh chóng
+        chỉ trong 3 bước</h1>
+      <div class="meta">08/10/2026 · 3 phút đọc</div>
+      <div class="hero animate__animated animate__zoomIn" style="animation-delay:.10s"><img class="ph"
+          src="images/trace.svg" alt="Cách tra cứu mã vận đơn nhanh chóng chỉ trong 3 bước"></div>
+      <p class="lead animate__animated animate__fadeInUp" style="animation-delay:.05s">Mã vận đơn là chìa khóa để biết
+        đơn hàng đang ở đâu. Bạn chỉ cần ba bước để xem trạng thái mới nhất.</p>
+      <h2>Bước 1: Tìm mã vận đơn</h2>
+      <p>Mã vận đơn có trong tin nhắn xác nhận hoặc trên phiếu gửi hàng. Hãy kiểm tra kỹ từng ký tự để tránh nhập sai.
+      </p>
+      <h2>Bước 2: Nhập mã vào ô tra cứu</h2>
+      <p>Mở trang tra cứu của ShipFast, dán hoặc nhập mã vào ô tìm kiếm rồi bấm nút tra cứu.</p>
+      <h2>Bước 3: Xem hành trình</h2>
+      <p>Hệ thống hiển thị từng mốc xử lý theo thứ tự thời gian, từ lúc tiếp nhận đến khi giao thành công.</p>
+      <p>Nếu mã không hiển thị kết quả, hãy chờ ít phút sau khi gửi hàng hoặc liên hệ bộ phận hỗ trợ.</p>
+      <p class="note">Nội dung và hình minh họa chỉ phục vụ bản demo, không phải thông báo chính thức của doanh nghiệp.
+      </p>
+      <a class="btn" href="#">Quay lại Tin tức</a>
+    </div>
+
+    <!-- ===== BÀI: dong-goi-hang-hoa ===== -->
+    <div class="art" data-slug="dong-goi-hang-hoa"
+      data-title="Đóng gói hàng hóa đúng cách để tránh hư hỏng khi vận chuyển" hidden>
+      <a class="back" href="#">← Quay lại Tin tức</a>
+      <span class="chip">Mẹo vận chuyển</span>
+      <h1 class="animate__animated animate__fadeInUp" style="animation-delay:.05s">Đóng gói hàng hóa đúng cách để tránh
+        hư hỏng khi vận chuyển</h1>
+      <div class="meta">05/10/2026 · 4 phút đọc</div>
+      <div class="hero animate__animated animate__zoomIn" style="animation-delay:.10s"><img class="ph"
+          src="images/pack.svg" alt="Đóng gói hàng hóa đúng cách để tránh hư hỏng khi vận chuyển"></div>
+      <p class="lead animate__animated animate__fadeInUp" style="animation-delay:.05s">Phần lớn hư hỏng trong vận chuyển
+        có thể tránh được nếu hàng hóa được đóng gói đúng cách ngay từ đầu.</p>
+      <h2>Chọn thùng và vật liệu phù hợp</h2>
+      <p>Thùng carton nên vừa với hàng, không quá rộng. Dùng xốp hơi hoặc giấy chèn để lấp khoảng trống, giúp hàng không
+        xê dịch.</p>
+      <h2>Gia cố và dán băng keo</h2>
+      <p>Dán chữ H ở đáy và nắp thùng để tăng độ chắc. Với hàng nặng, nên dán thêm các cạnh.</p>
+      <h2>Hàng dễ vỡ và chất lỏng</h2>
+      <p>Bọc riêng từng món, đặt cách thành thùng ít nhất vài centimet. Chất lỏng cần nắp kín và túi chống thấm.</p>
+      <p>Dán nhãn “Dễ vỡ” và ghi rõ thông tin người nhận ở mặt trên của kiện.</p>
+      <p class="note">Nội dung và hình minh họa chỉ phục vụ bản demo, không phải thông báo chính thức của doanh nghiệp.
+      </p>
+      <a class="btn" href="#">Quay lại Tin tức</a>
+    </div>
+
+    <!-- ===== BÀI: lich-giao-nhan ===== -->
+    <div class="art" data-slug="lich-giao-nhan" data-title="Lịch giao nhận hàng trong dịp cao điểm cuối năm" hidden>
+      <a class="back" href="#">← Quay lại Tin tức</a>
+      <span class="chip">Thông báo</span>
+      <h1 class="animate__animated animate__fadeInUp" style="animation-delay:.05s">Lịch giao nhận hàng trong dịp cao
+        điểm cuối năm</h1>
+      <div class="meta">03/10/2026 · 3 phút đọc</div>
+      <div class="hero animate__animated animate__zoomIn" style="animation-delay:.10s"><img class="ph"
+          src="images/cal.svg" alt="Lịch giao nhận hàng trong dịp cao điểm cuối năm"></div>
+      <p class="lead animate__animated animate__fadeInUp" style="animation-delay:.05s">Cuối năm là thời điểm lượng đơn
+        tăng mạnh. Dưới đây là những lưu ý giúp bạn chủ động hơn khi gửi và nhận hàng.</p>
+      <h2>Thời gian xử lý có thể kéo dài</h2>
+      <p>Lượng kiện hàng tăng khiến thời gian phân loại và giao đến người nhận có thể lâu hơn bình thường vài ngày ở một
+        số tuyến.</p>
+      <h2>Gợi ý cho người gửi</h2>
+      <p>Hãy tạo đơn sớm, ghi đầy đủ địa chỉ và số điện thoại. Đóng gói kỹ để hạn chế phải xử lý lại.</p>
+      <h2>Gợi ý cho người nhận</h2>
+      <p>Giữ điện thoại liên lạc được trong khung giờ giao và theo dõi trạng thái đơn trên trang tra cứu.</p>
+      <p>Thông tin trong bài là nội dung minh họa cho bản demo.</p>
+      <p class="note">Nội dung và hình minh họa chỉ phục vụ bản demo, không phải thông báo chính thức của doanh nghiệp.
+      </p>
+      <a class="btn" href="#">Quay lại Tin tức</a>
+    </div>
+
+    <!-- ===== BÀI: chinh-sach-boi-thuong ===== -->
+    <div class="art" data-slug="chinh-sach-boi-thuong" data-title="Chính sách bồi thường khi đơn hàng gặp sự cố" hidden>
+      <a class="back" href="#">← Quay lại Tin tức</a>
+      <span class="chip">Công ty</span>
+      <h1 class="animate__animated animate__fadeInUp" style="animation-delay:.05s">Chính sách bồi thường khi đơn hàng
+        gặp sự cố</h1>
+      <div class="meta">30/09/2026 · 5 phút đọc</div>
+      <div class="hero animate__animated animate__zoomIn" style="animation-delay:.10s"><img class="ph"
+          src="images/sup.svg" alt="Chính sách bồi thường khi đơn hàng gặp sự cố"></div>
+      <p class="lead animate__animated animate__fadeInUp" style="animation-delay:.05s">Dù đã cẩn trọng, sự cố vẫn có thể
+        xảy ra. Bài viết giải thích cách yêu cầu hỗ trợ khi đơn hàng bị trễ, thất lạc hoặc hư hỏng.</p>
+      <h2>Các trường hợp có thể được xem xét</h2>
+      <p>Đơn bị thất lạc, hư hỏng do vận chuyển hoặc chậm quá thời gian cam kết có thể được xem xét bồi thường theo điều
+        khoản đã đồng ý khi tạo đơn.</p>
+      <h2>Quy trình gửi yêu cầu</h2>
+      <p>Liên hệ bộ phận hỗ trợ kèm mã vận đơn, hình ảnh kiện hàng và mô tả sự cố. Yêu cầu được tiếp nhận và phản hồi
+        theo từng bước.</p>
+      <h2>Mức bồi thường</h2>
+      <p>Mức bồi thường phụ thuộc giá trị khai báo và loại dịch vụ. Hãy khai báo giá trị hàng chính xác khi gửi.</p>
+      <p>Đây là nội dung demo, không phải điều khoản chính thức.</p>
+      <p class="note">Nội dung và hình minh họa chỉ phục vụ bản demo, không phải thông báo chính thức của doanh nghiệp.
+      </p>
+      <a class="btn" href="#">Quay lại Tin tức</a>
+    </div>
+
+    <!-- ===== BÀI: huong-dan-cod ===== -->
+    <div class="art" data-slug="huong-dan-cod" data-title="Thu hộ (COD) hoạt động như thế nào và cần lưu ý gì" hidden>
+      <a class="back" href="#">← Quay lại Tin tức</a>
+      <span class="chip">Hướng dẫn</span>
+      <h1 class="animate__animated animate__fadeInUp" style="animation-delay:.05s">Thu hộ (COD) hoạt động như thế nào và
+        cần lưu ý gì</h1>
+      <div class="meta">27/09/2026 · 4 phút đọc</div>
+      <div class="hero animate__animated animate__zoomIn" style="animation-delay:.10s"><img class="ph"
+          src="images/cod.svg" alt="Thu hộ (COD) hoạt động như thế nào và cần lưu ý gì"></div>
+      <p class="lead animate__animated animate__fadeInUp" style="animation-delay:.05s">COD cho phép người nhận thanh
+        toán khi nhận hàng, còn người bán nhận lại tiền thông qua ShipFast. Cùng tìm hiểu quy trình này.</p>
+      <h2>Quy trình thu hộ</h2>
+      <p>Khi tạo đơn, người gửi nhập số tiền cần thu. Tài xế thu đúng số tiền này từ người nhận ở thời điểm giao thành
+        công.</p>
+      <h2>Đối soát và nhận tiền</h2>
+      <p>Sau khi giao xong, khoản thu được ghi nhận vào bảng đối soát và chuyển cho người bán theo chu kỳ đã thỏa thuận,
+        sau khi trừ các khoản phí.</p>
+      <h2>Lưu ý quan trọng</h2>
+      <p>Nhập chính xác số tiền thu hộ, thông báo cho người nhận chuẩn bị tiền mặt hoặc chuyển khoản và kiểm tra hàng
+        theo chính sách trước khi thanh toán.</p>
+      <p class="note">Nội dung và hình minh họa chỉ phục vụ bản demo, không phải thông báo chính thức của doanh nghiệp.
+      </p>
+      <a class="btn" href="#">Quay lại Tin tức</a>
+    </div>
+
+  </main>
+  <footer class="pub-footer">
+    <div class="pub-footer__grid">
+      <div class="animate__animated animate__fadeInUp">
+        <h4>ShipFast</h4>
+        <p>Dịch vụ vận chuyển hàng hóa nhanh chóng và tin cậy.</p>
+      </div>
+      <div class="animate__animated animate__fadeInUp" style="animation-delay:0.15s">
+        <h4>Liên kết</h4>
+        <a href="../Tracuu/tracuu.html">Tra cứu</a>
+        <a href="../Tranghotro/support.html">Hỗ trợ</a>
+        <a href="../Trangtintuc/index.html" class="active">Tin tức</a>
+      </div>
+      <div class="animate__animated animate__fadeInUp" style="animation-delay:0.30s">
+        <h4>Liên hệ</h4>
+        <p>Email: hotro@shipfast.vn</p>
+        <p>Hotline: 1900 1234</p>
+        <p>Giờ làm việc: 07:00–21:00</p>
+      </div>
+    </div>
+    <div class="pub-footer__copy">© 2026 ShipFast. All rights reserved.</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

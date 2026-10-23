@@ -122,6 +122,7 @@ form.addEventListener("submit", function(event) {
     result.style.color = "green";
     result.textContent =
         "Yêu cầu hỗ trợ của bạn đã được ghi nhận thành công!";
+    window.SFAnim && SFAnim.pop(result, "bounceIn");
 
     // Xoa noi dung bieu mau
     form.reset();

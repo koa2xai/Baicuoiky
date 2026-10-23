@@ -9,64 +9,371 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="../Chung/site.css">
   <link rel="stylesheet" href="tracuu.css">
 </head>
 
-<body>
+<body class="pub">
 
   <!-- ===== MENU ===== -->
-  <header class="header">
-    <div class="header__inner">
-      <a class="logo" href="tra-cuu.html">ShipFast</a>
-      <nav class="nav" aria-label="Menu chính">
-        <a href="tra-cuu.html" class="active">Tra cứu</a>
-        <a href="../2-ho-tro/ho-tro.html">Hỗ trợ</a>
-        <a href="../3-tin-tuc/tin-tuc.html">Tin tức</a>
+  <header class="pub-header animate__animated animate__fadeInDown">
+    <div class="pub-header__inner">
+      <a class="pub-logo" href="../Tracuu/tracuu.html">ShipFast</a>
+      <nav class="pub-nav" aria-label="Menu chính">
+        <a href="../Tracuu/tracuu.html" class="active" aria-current="page">Tra cứu</a>
+        <a href="../Tranghotro/support.html">Hỗ trợ</a>
+        <a href="../Trangtintuc/index.html">Tin tức</a>
       </nav>
-      <a class="btn" href="../4-dang-nhap/dang-nhap.html">Đăng nhập</a>
+      <a class="pub-btn" href="../Trangdangnhap/login.html">Đăng nhập</a>
     </div>
   </header>
 
-  <main class="container">
+  <main class="pub-main">
 
     <!-- ===== TIÊU ĐỀ + Ô TÌM KIẾM ===== -->
-    <section class="page-title">
+    <section class="page-title pub-title animate__animated animate__fadeInDown">
       <h1>Tra cứu đơn hàng</h1>
       <p>Nhập mã vận đơn để xem thông tin</p>
 
       <form class="search" id="searchForm" role="search">
-        <input id="codeInput" type="text" placeholder="Nhập mã vận đơn" aria-label="Mã vận đơn"
-          autocomplete="off">
+        <input id="codeInput" type="text" placeholder="Nhập mã vận đơn" aria-label="Mã vận đơn" autocomplete="off">
         <button class="btn" type="submit">Tìm kiếm</button>
       </form>
       <p class="search-hint">Thử mã mẫu: <button type="button" id="sampleBtn">SF123456789VN</button></p>
     </section>
 
-    <!-- ===== KẾT QUẢ TÌM KIẾM (Ban đầu trống) ===== -->
+    <!-- ===== KẾT QUẢ TRA CỨU: nội dung từng đơn nằm sẵn trong HTML, JS chỉ hiện/ẩn ===== -->
     <section id="result" aria-live="polite">
-      <!-- Dữ liệu đơn hàng sẽ được JavaScript chèn vào đây sau khi bấm Tìm kiếm -->
+      <!-- ===== ĐƠN SF123456789VN ===== -->
+      <div class="order" data-code="SF123456789VN" hidden>
+        <div class="card summary animate__animated animate__fadeInUp">
+          <div>
+            <div class="lbl">Mã vận đơn</div>
+            <div class="summary__code">SF123456789VN</div>
+          </div>
+          <div>
+            <div class="lbl">Dịch vụ</div>
+            <div class="summary__val">Giao tiêu chuẩn</div>
+          </div>
+          <div>
+            <div class="lbl">Ngày đặt</div>
+            <div class="summary__val">12/10/2026 09:30</div>
+          </div>
+          <div>
+            <div class="lbl">Trạng thái</div>
+            <span class="chip chip--delivering">Đang giao hàng</span>
+          </div>
+        </div>
+
+        <div class="track">
+          <div class="card animate__animated animate__fadeInLeft" style="animation-delay:.10s">
+            <h2>Hành trình đơn hàng</h2>
+            <ol class="timeline">
+              <li class="step">
+                <b>Đã tạo đơn</b>
+                12/10/2026 09:30 - Hệ thống đã tiếp nhận đơn hàng
+              </li>
+              <li class="step">
+                <b>Đã lấy hàng</b>
+                12/10/2026 12:15 - Nhân viên đã lấy hàng tại người gửi
+              </li>
+              <li class="step">
+                <b>Đang vận chuyển</b>
+                13/10/2026 08:20 - Hàng đang trên đường đến bưu cục tiếp theo
+              </li>
+              <li class="step current">
+                <b>Đang giao hàng</b>
+                14/10/2026 09:05 - Đơn hàng đang được giao đến địa chỉ nhận
+              </li>
+              <li class="step todo">
+                <b>Đã giao hàng</b>
+                Chưa hoàn thành
+              </li>
+            </ol>
+            <div class="live">Thông tin được cập nhật theo thời gian thực</div>
+          </div>
+
+          <div class="stack">
+            <div class="card map animate__animated animate__fadeInRight" style="animation-delay:.15s">
+              <div class="map__bar">
+                <div>
+                  <b style="color: var(--cyan)">Đang giao hàng</b>
+                  <div class="lbl">Tài xế: Lê Dương Bảo Lâm · 0901 234 567</div>
+                </div>
+                <div class="eta">Dự kiến giao<br><b>Hôm nay, trước 18:00</b></div>
+              </div>
+              <div class="live-map">
+                <svg viewBox="0 0 500 260" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                  role="img" aria-label="Bản đồ hành trình giao hàng">
+                  <rect width="100%" height="100%" fill="#E9EFF5" />
+                  <path d="M 0,60 L 500,60 M 0,180 L 500,180 M 150,0 L 150,260 M 350,0 L 350,260" stroke="#FFFFFF"
+                    stroke-width="6" opacity="0.7" />
+                  <path class="map-track" d="M 50 200 C 120 200, 150 70, 250 70 C 350 70, 380 190, 450 190" />
+                  <g transform="translate(50, 200)">
+                    <circle r="8" fill="#0889AB" />
+                    <circle r="4" fill="#FFFFFF" />
+                    <text x="0" y="22" font-size="11" font-weight="600" fill="#0B2A4A" text-anchor="middle">Điểm
+                      gửi</text>
+                  </g>
+                  <g transform="translate(450, 190)">
+                    <circle r="8" fill="#E8890C" />
+                    <circle r="4" fill="#FFFFFF" />
+                    <text x="0" y="22" font-size="11" font-weight="600" fill="#0B2A4A" text-anchor="middle">Điểm
+                      nhận</text>
+                  </g>
+                  <!-- Xe giao hàng: class thay đổi theo trạng thái (chạy / sự cố / đã giao) -->
+                  <g class="delivery-truck">
+                    <rect x="-18" y="-12" width="22" height="14" rx="3" fill="#0889AB" />
+                    <path d="M 4 -12 L 12 -12 L 16 -4 L 16 2 L 4 2 Z" fill="#06728F" />
+                    <path d="M 6 -10 L 11 -10 L 13 -5 L 6 -5 Z" fill="#22C1E3" />
+                    <circle cx="-10" cy="3" r="3" fill="#0B2A4A" />
+                    <circle cx="10" cy="3" r="3" fill="#0B2A4A" />
+                    <polygon points="16,-2 24,-6 24,2" fill="#FFE58F" opacity="0.8" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <div class="card animate__animated animate__fadeInRight" style="animation-delay:.30s">
+              <h2>Thông tin giao nhận</h2>
+              <div class="row"><span class="lbl">Người nhận</span><b>Nguyễn Vũ Trường Giang</b></div>
+              <div class="row"><span class="lbl">Điện thoại</span><b>0934 *** 800</b></div>
+              <div class="row"><span class="lbl">Địa chỉ</span><b>45 Lê Lợi, P. Hòa Cường, Q. Hải Châu, Đà Nẵng</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ĐƠN SF123456792VN ===== -->
+      <div class="order" data-code="SF123456792VN" hidden>
+        <div class="card summary animate__animated animate__fadeInUp">
+          <div>
+            <div class="lbl">Mã vận đơn</div>
+            <div class="summary__code">SF123456792VN</div>
+          </div>
+          <div>
+            <div class="lbl">Dịch vụ</div>
+            <div class="summary__val">Giao hỏa tốc</div>
+          </div>
+          <div>
+            <div class="lbl">Ngày đặt</div>
+            <div class="summary__val">13/10/2026 10:15</div>
+          </div>
+          <div>
+            <div class="lbl">Trạng thái</div>
+            <span class="chip chip--issue">Gặp sự cố</span>
+          </div>
+        </div>
+
+        <div class="track">
+          <div class="card animate__animated animate__fadeInLeft" style="animation-delay:.10s">
+            <h2>Hành trình đơn hàng</h2>
+            <ol class="timeline">
+              <li class="step">
+                <b>Đã tạo đơn</b>
+                13/10/2026 10:15 - Hệ thống đã tiếp nhận đơn hàng
+              </li>
+              <li class="step">
+                <b>Đã lấy hàng</b>
+                13/10/2026 11:30 - Nhân viên đã lấy hàng thành công
+              </li>
+              <li class="step current">
+                <b>Đang giao hàng</b>
+                13/10/2026 14:00 - Không liên lạc được người nhận
+              </li>
+              <li class="step todo">
+                <b>Đã giao hàng</b>
+                Chưa hoàn thành
+              </li>
+            </ol>
+            <div class="live">Thông tin được cập nhật theo thời gian thực</div>
+          </div>
+
+          <div class="stack">
+            <div class="card map animate__animated animate__fadeInRight" style="animation-delay:.15s">
+              <div class="map__bar">
+                <div>
+                  <b style="color: var(--cyan)">Gặp sự cố</b>
+                  <div class="lbl">Tài xế: Nguyễn Văn A · 0988 777 666</div>
+                </div>
+                <div class="eta">Dự kiến giao<br><b>Đang cập nhật lại thời gian</b></div>
+              </div>
+              <div class="live-map">
+                <svg viewBox="0 0 500 260" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                  role="img" aria-label="Bản đồ hành trình giao hàng">
+                  <rect width="100%" height="100%" fill="#E9EFF5" />
+                  <path d="M 0,60 L 500,60 M 0,180 L 500,180 M 150,0 L 150,260 M 350,0 L 350,260" stroke="#FFFFFF"
+                    stroke-width="6" opacity="0.7" />
+                  <path class="map-track" d="M 50 200 C 120 200, 150 70, 250 70 C 350 70, 380 190, 450 190" />
+                  <g transform="translate(50, 200)">
+                    <circle r="8" fill="#0889AB" />
+                    <circle r="4" fill="#FFFFFF" />
+                    <text x="0" y="22" font-size="11" font-weight="600" fill="#0B2A4A" text-anchor="middle">Điểm
+                      gửi</text>
+                  </g>
+                  <g transform="translate(450, 190)">
+                    <circle r="8" fill="#E8890C" />
+                    <circle r="4" fill="#FFFFFF" />
+                    <text x="0" y="22" font-size="11" font-weight="600" fill="#0B2A4A" text-anchor="middle">Điểm
+                      nhận</text>
+                  </g>
+                  <!-- Xe giao hàng: class thay đổi theo trạng thái (chạy / sự cố / đã giao) -->
+                  <g class="delivery-truck issue">
+                    <rect x="-18" y="-12" width="22" height="14" rx="3" fill="#0889AB" />
+                    <path d="M 4 -12 L 12 -12 L 16 -4 L 16 2 L 4 2 Z" fill="#06728F" />
+                    <path d="M 6 -10 L 11 -10 L 13 -5 L 6 -5 Z" fill="#22C1E3" />
+                    <circle cx="-10" cy="3" r="3" fill="#0B2A4A" />
+                    <circle cx="10" cy="3" r="3" fill="#0B2A4A" />
+                    <polygon points="16,-2 24,-6 24,2" fill="#FFE58F" opacity="0.8" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <div class="card animate__animated animate__fadeInRight" style="animation-delay:.30s">
+              <h2>Thông tin giao nhận</h2>
+              <div class="row"><span class="lbl">Người nhận</span><b>Trần Thị Bích Ngọc</b></div>
+              <div class="row"><span class="lbl">Điện thoại</span><b>0912 *** 456</b></div>
+              <div class="row"><span class="lbl">Địa chỉ</span><b>120 Nguyễn Văn Linh, Q. Thanh Khê, Đà Nẵng</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ĐƠN SF123456793VN ===== -->
+      <div class="order" data-code="SF123456793VN" hidden>
+        <div class="card summary animate__animated animate__fadeInUp">
+          <div>
+            <div class="lbl">Mã vận đơn</div>
+            <div class="summary__code">SF123456793VN</div>
+          </div>
+          <div>
+            <div class="lbl">Dịch vụ</div>
+            <div class="summary__val">Giao tiết kiệm</div>
+          </div>
+          <div>
+            <div class="lbl">Ngày đặt</div>
+            <div class="summary__val">10/10/2026 08:00</div>
+          </div>
+          <div>
+            <div class="lbl">Trạng thái</div>
+            <span class="chip chip--delivered">Đã giao hàng</span>
+          </div>
+        </div>
+
+        <div class="track">
+          <div class="card animate__animated animate__fadeInLeft" style="animation-delay:.10s">
+            <h2>Hành trình đơn hàng</h2>
+            <ol class="timeline">
+              <li class="step">
+                <b>Đã tạo đơn</b>
+                10/10/2026 08:00 - Hệ thống đã tiếp nhận đơn hàng
+              </li>
+              <li class="step">
+                <b>Đã lấy hàng</b>
+                10/10/2026 10:00 - Đã lấy hàng thành công
+              </li>
+              <li class="step">
+                <b>Đang vận chuyển</b>
+                10/10/2026 14:30 - Đến kho trung chuyển Đà Nẵng
+              </li>
+              <li class="step">
+                <b>Đang giao hàng</b>
+                11/10/2026 09:00 - Tài xế đang giao hàng
+              </li>
+              <li class="step current">
+                <b>Đã giao hàng</b>
+                11/10/2026 15:30 - Người nhận đã ký nhận
+              </li>
+            </ol>
+            <div class="live">Thông tin được cập nhật theo thời gian thực</div>
+          </div>
+
+          <div class="stack">
+            <div class="card map animate__animated animate__fadeInRight" style="animation-delay:.15s">
+              <div class="map__bar">
+                <div>
+                  <b style="color: var(--cyan)">Đã giao hàng</b>
+                  <div class="lbl">Tài xế: Phan Văn Nam · 0905 111 222</div>
+                </div>
+                <div class="eta">Dự kiến giao<br><b>Đã giao lúc 11/10/2026 15:30</b></div>
+              </div>
+              <div class="live-map">
+                <svg viewBox="0 0 500 260" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                  role="img" aria-label="Bản đồ hành trình giao hàng">
+                  <rect width="100%" height="100%" fill="#E9EFF5" />
+                  <path d="M 0,60 L 500,60 M 0,180 L 500,180 M 150,0 L 150,260 M 350,0 L 350,260" stroke="#FFFFFF"
+                    stroke-width="6" opacity="0.7" />
+                  <path class="map-track" d="M 50 200 C 120 200, 150 70, 250 70 C 350 70, 380 190, 450 190" />
+                  <g transform="translate(50, 200)">
+                    <circle r="8" fill="#0889AB" />
+                    <circle r="4" fill="#FFFFFF" />
+                    <text x="0" y="22" font-size="11" font-weight="600" fill="#0B2A4A" text-anchor="middle">Điểm
+                      gửi</text>
+                  </g>
+                  <g transform="translate(450, 190)">
+                    <circle r="8" fill="#E8890C" />
+                    <circle r="4" fill="#FFFFFF" />
+                    <text x="0" y="22" font-size="11" font-weight="600" fill="#0B2A4A" text-anchor="middle">Điểm
+                      nhận</text>
+                  </g>
+                  <!-- Xe giao hàng: class thay đổi theo trạng thái (chạy / sự cố / đã giao) -->
+                  <g class="delivery-truck delivered">
+                    <rect x="-18" y="-12" width="22" height="14" rx="3" fill="#0889AB" />
+                    <path d="M 4 -12 L 12 -12 L 16 -4 L 16 2 L 4 2 Z" fill="#06728F" />
+                    <path d="M 6 -10 L 11 -10 L 13 -5 L 6 -5 Z" fill="#22C1E3" />
+                    <circle cx="-10" cy="3" r="3" fill="#0B2A4A" />
+                    <circle cx="10" cy="3" r="3" fill="#0B2A4A" />
+                    <polygon points="16,-2 24,-6 24,2" fill="#FFE58F" opacity="0.8" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <div class="card animate__animated animate__fadeInRight" style="animation-delay:.30s">
+              <h2>Thông tin giao nhận</h2>
+              <div class="row"><span class="lbl">Người nhận</span><b>Phạm Minh Hoàng</b></div>
+              <div class="row"><span class="lbl">Điện thoại</span><b>0978 *** 123</b></div>
+              <div class="row"><span class="lbl">Địa chỉ</span><b>88 Trần Phú, Q. Hải Châu, Đà Nẵng</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== KHÔNG TÌM THẤY ===== -->
+      <div class="card not-found animate__animated animate__headShake" id="notFound" hidden>
+        <h2>Không tìm thấy đơn hàng!</h2>
+        <p>
+          Mã vận đơn "<b id="notFoundCode"></b>" không tồn tại trong hệ thống.<br>
+          Thử các mã mẫu: <b>SF123456789VN</b> (Đang giao), <b>SF123456792VN</b> (Sự cố), <b>SF123456793VN</b> (Đã giao)
+        </p>
+      </div>
     </section>
 
   </main>
 
-  <footer class="footer">
-    <div class="container footer__grid">
-      <div>
+  <footer class="pub-footer">
+    <div class="pub-footer__grid">
+      <div class="animate__animated animate__fadeInUp">
         <h4>ShipFast</h4>
         <p>Dịch vụ vận chuyển hàng hóa nhanh chóng và tin cậy.</p>
       </div>
-      <div>
+      <div class="animate__animated animate__fadeInUp" style="animation-delay:0.15s">
         <h4>Liên kết</h4>
-        <a href="tra-cuu.html">Tra cứu</a>
-        <a href="../2-ho-tro/ho-tro.html">Hỗ trợ</a>
-        <a href="../3-tin-tuc/tin-tuc.html">Tin tức</a>
+        <a href="../Tracuu/tracuu.html" class="active">Tra cứu</a>
+        <a href="../Tranghotro/support.html">Hỗ trợ</a>
+        <a href="../Trangtintuc/index.html">Tin tức</a>
       </div>
-      <div>
+      <div class="animate__animated animate__fadeInUp" style="animation-delay:0.30s">
         <h4>Liên hệ</h4>
-        <p>Email: hotro@shipfast.vn<br>Hotline: 1900 1234</p>
+        <p>Email: hotro@shipfast.vn</p>
+        <p>Hotline: 1900 1234</p>
+        <p>Giờ làm việc: 07:00–21:00</p>
       </div>
     </div>
-    <div class="footer__copy">© 2026 ShipFast. All rights reserved.</div>
+    <div class="pub-footer__copy">© 2026 ShipFast. All rights reserved.</div>
   </footer>
 
   <script src="tracuu.js"></script>

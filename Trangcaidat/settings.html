@@ -1,15 +1,186 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Cài đặt – ShipFast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="settings.css">
   <script src="../Chung/auth.js"></script>
 </head>
-<body data-page="settings">
-  <main id="app"></main>
-  <div id="toast"></div>
+
+<body data-page="settings" class="sf-init">
+  <aside class="sf-side animate__animated animate__fadeIn" id="sfSide">
+    <div class="sf-logo"><b>S<span class="t">hipFast</span></b><small class="t">Giao nhận, niềm tin vững</small></div>
+    <nav aria-label="Menu chính">
+      <a href="../Trangsuco/incident.html" data-tip="Quản lý sự cố" title="Quản lý sự cố"><svg class="ic-s" width="18"
+          height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+          <path d="M12 9v4" />
+          <path d="M12 17h.01" />
+        </svg><span class="t">Quản lý sự cố</span></a>
+      <a href="../Trangthongke/report.html" data-tip="Báo cáo &amp; Thống kê" title="Báo cáo &amp; Thống kê"><svg
+          class="ic-s" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 16v5" />
+          <path d="M16 14v7" />
+          <path d="M20 10v11" />
+          <path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15" />
+          <path d="M4 18v3" />
+          <path d="M8 14v7" />
+        </svg><span class="t">Báo cáo &amp; Thống kê</span></a>
+      <a href="../Trangcaidat/settings.html" data-tip="Cài đặt" title="Cài đặt" class="on" aria-current="page"><svg
+          class="ic-s" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path
+            d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+          <circle cx="12" cy="12" r="3" />
+        </svg><span class="t">Cài đặt</span></a>
+      <a href="../Tracuu/tracuu.html" data-tip="Trang tra cứu" title="Trang tra cứu"><svg class="ic-s" width="18"
+          height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.3-4.3" />
+        </svg><span class="t">Trang tra cứu</span></a>
+    </nav>
+  </aside>
+  <div class="sf-ov" id="sfOv"></div>
+  <header class="sf-head animate__animated animate__fadeInDown">
+    <button class="sf-burger" id="sfBurger" aria-label="Đóng/mở menu" aria-controls="sfSide"><svg class="ic-s"
+        width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 12h16" />
+        <path d="M4 18h16" />
+        <path d="M4 6h16" />
+      </svg></button>
+    <span class="sf-hello">Xin chào, <span id="adminName">Admin ShipFast</span></span>
+  </header>
+
+  <main id="app">
+    <div>
+      <div class="crumb">Cài đặt</div>
+      <h1 class="ttl animate__animated animate__fadeInDown"><svg class="ic-s" width="24" height="24" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          aria-hidden="true">
+          <path
+            d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>Cài đặt tài khoản Admin</h1>
+    </div>
+
+    <!-- Thông tin quản trị viên -->
+    <div class="card animate__animated animate__fadeInUp" style="animation-delay:.10s">
+      <h3 class="ttl"><svg class="ic-s" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>Thông tin quản trị viên</h3>
+      <div class="hero">
+        <div class="av" aria-hidden="true">A</div>
+        <div>
+          <h2>Admin ShipFast</h2>
+          <p>admin@gmail.com</p>
+          <span class="pill">Quản trị viên</span>
+          <span class="pill ok">Đang hoạt động</span>
+        </div>
+      </div>
+      <div class="row"><span>Bộ phận</span><b>Quản trị hệ thống</b></div>
+      <div class="row"><span>Ngày tạo tài khoản</span><b>Chưa cập nhật</b></div>
+      <div class="row"><span>Lần đăng nhập gần nhất</span><b data-field="lastLogin">Chưa cập nhật</b></div>
+    </div>
+
+    <div class="g2">
+      <!-- Thông tin tài khoản -->
+      <div class="card animate__animated animate__fadeInUp" style="animation-delay:.20s">
+        <h3 class="ttl"><svg class="ic-s" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+            <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+            <path d="M10 9H8" />
+            <path d="M16 13H8" />
+            <path d="M16 17H8" />
+          </svg>Thông tin tài khoản</h3>
+        <div class="row"><span>Họ và tên</span><b>Admin ShipFast</b></div>
+        <div class="row"><span>Tên tài khoản</span><b data-field="user">admin</b></div>
+        <div class="row"><span>Email</span><b>admin@gmail.com</b></div>
+        <div class="row"><span>Vai trò</span><b>Quản trị viên</b></div>
+        <div class="acts"><button class="btn o"
+            data-toast="Chức năng “Chỉnh sửa thông tin” chưa được tích hợp (chưa có backend)."><svg class="ic-s"
+              width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path
+                d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
+              <path d="m15 5 4 4" />
+            </svg>Chỉnh sửa thông tin</button></div>
+      </div>
+
+      <!-- Bảo mật tài khoản -->
+      <div class="card animate__animated animate__fadeInUp" style="animation-delay:.30s">
+        <h3 class="ttl"><svg class="ic-s" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path
+              d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+            <path d="m9 12 2 2 4-4" />
+          </svg>Bảo mật tài khoản</h3>
+        <div class="row"><span>Phương thức đăng nhập</span><b>Tên tài khoản và mật khẩu</b></div>
+        <div class="row"><span>Mật khẩu</span><b>Đã thiết lập (ẩn)</b></div>
+        <div class="acts"><button class="btn o"
+            data-toast="Chức năng “Đổi mật khẩu” chưa được tích hợp (chưa có backend)."><svg class="ic-s" width="14"
+              height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>Đổi mật khẩu</button></div>
+      </div>
+    </div>
+
+    <!-- Thông tin phiên đăng nhập -->
+    <div class="card animate__animated animate__fadeInUp" style="animation-delay:.40s">
+      <h3 class="ttl"><svg class="ic-s" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect width="20" height="14" x="2" y="3" rx="2" />
+          <path d="M8 21h8" />
+          <path d="M12 17v4" />
+        </svg>Thông tin phiên đăng nhập</h3>
+      <div class="row"><span>Đăng nhập lúc</span><b data-field="sessionStart">Chưa cập nhật</b></div>
+      <div class="row"><span>Phiên hết hạn lúc</span><b data-field="sessionEnd">Chưa cập nhật</b></div>
+      <div class="row"><span>Trình duyệt</span><b data-field="browser">Không xác định</b></div>
+    </div>
+
+    <!-- Đăng xuất -->
+    <div class="card out animate__animated animate__fadeInUp" style="animation-delay:.50s">
+      <div>
+        <h3>Kết thúc phiên đăng nhập</h3>
+        <p>Bạn sẽ được chuyển về trang đăng nhập.</p>
+      </div>
+      <button class="btn red" id="logoutBtn"><svg class="ic-s" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+          <path d="m16 17 5-5-5-5" />
+          <path d="M21 12H9" />
+        </svg>Đăng xuất</button>
+    </div>
+  </main>
+
+  <!-- Hộp thoại xác nhận đăng xuất (ẩn sẵn, JS chỉ mở/đóng) -->
+  <div class="dlg animate__animated animate__fadeIn" id="logoutDlg" hidden>
+    <div class="box animate__animated animate__zoomIn" role="dialog" aria-modal="true" aria-labelledby="dt">
+      <h3 id="dt">Đăng xuất</h3>
+      <p>Bạn có chắc chắn muốn đăng xuất khỏi tài khoản Admin không?</p>
+      <div class="acts"><button class="btn o" id="logoutNo">Hủy</button><button class="btn red" id="logoutYes">Đăng
+          xuất</button></div>
+    </div>
+  </div>
+
+  <div id="toast" class="animate__animated animate__fadeInUp"></div>
+  <script src="../Chung/admin.js"></script>
   <script src="settings.js"></script>
 </body>
+
 </html>

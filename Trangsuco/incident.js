@@ -1,11 +1,3 @@
-/* =====================================================================
-   ShipFast – Quản lý sự cố
-   Toàn bộ nội dung (bảng sự cố, chi tiết từng đơn) nằm trong incident.html.
-   File này chỉ xử lý thao tác:
-   - chuyển giữa màn hình danh sách / chi tiết theo địa chỉ (#/su-co, #/su-co/MÃ?i=MÃ_SỰ_CỐ)
-   - lọc bảng, tìm mã đơn
-   - chọn mức độ, lưu ghi chú (localStorage)
-   ===================================================================== */
 const SEV = { l: "Thấp", m: "Trung bình", h: "Cao" };
 const LVL_CLASS = { l: "", m: "lvl-m", h: "lvl-h" };
 const KEY = id => "sf_inc_" + id;

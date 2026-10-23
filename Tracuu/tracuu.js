@@ -1,8 +1,3 @@
-/**
- * ShipFast - Tra cứu đơn hàng (tracuu.js)
- * Nội dung các đơn hàng nằm sẵn trong tracuu.html (thẻ .order[data-code]).
- * File này chỉ xử lý thao tác: nhập mã, bấm tìm, hiện đúng đơn / báo không tìm thấy.
- */
 document.addEventListener("DOMContentLoaded", () => {
   const searchForm = document.getElementById("searchForm");
   const codeInput = document.getElementById("codeInput");

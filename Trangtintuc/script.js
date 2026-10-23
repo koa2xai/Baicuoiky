@@ -1,11 +1,3 @@
-/* =====================================================================
-   ShipFast – Tin tức
-   Danh sách tin, nội dung từng bài và hình ảnh (thư mục images/) đều nằm trong index.html.
-   File này chỉ xử lý thao tác: đổi màn hình theo địa chỉ trên thanh URL
-   (#            -> danh sách trang 1,
-    #trang-2     -> danh sách trang 2,
-    #ten-bai     -> bài viết tương ứng).
-   ===================================================================== */
 const viewList = document.getElementById('viewList');
 const articles = Array.from(document.querySelectorAll('.art'));
 const cards = Array.from(document.querySelectorAll('.grid .card'));

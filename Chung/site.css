@@ -1,18 +1,11 @@
-/* =====================================================================
-   ShipFast – giao diện dùng chung
-   Dùng cho: Tra cứu, Hỗ trợ, Tin tức, Đăng nhập.
-   Các trang quản trị (Sự cố, Thống kê, Cài đặt) dùng chung bảng màu này
-   nhưng giữ bố cục sidebar riêng.
-   Muốn đổi màu/nền cho cả website: chỉ cần sửa các biến ở :root bên dưới.
-   ===================================================================== */
 
 :root {
-  --navy: #0B2A4A;        /* header, chữ chính */
-  --navy-deep: #06213A;   /* footer */
-  --cyan: #0A87A8;        /* nút, liên kết, điểm nhấn */
-  --cyan-dark: #06728F;   /* nút khi rê chuột */
-  --cyan-light: #22C1E3;  /* menu đang chọn, tiêu đề footer */
-  --bg: #F4F6FA;          /* MÀU NỀN CHUNG của mọi trang */
+  --navy: #0B2A4A;
+  --navy-deep: #06213A;
+  --cyan: #0A87A8;
+  --cyan-dark: #06728F;
+  --cyan-light: #22C1E3;
+  --bg: #F4F6FA;
   --card: #FFFFFF;
   --text: #0B2A4A;
   --muted: #5B6B7D;
@@ -23,7 +16,9 @@
   --maxw: 1180px;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body.pub {
   margin: 0;
@@ -36,8 +31,14 @@ body.pub {
   line-height: 1.5;
 }
 
-.pub a { color: inherit; }
-.pub :focus-visible { outline: 3px solid var(--cyan-light); outline-offset: 2px; }
+.pub a {
+  color: inherit;
+}
+
+.pub :focus-visible {
+  outline: 3px solid var(--cyan-light);
+  outline-offset: 2px;
+}
 
 /* ---------- Header (menu) ---------- */
 .pub-header {
@@ -46,6 +47,7 @@ body.pub {
   top: 0;
   z-index: 10;
 }
+
 .pub-header__inner {
   max-width: var(--maxw);
   margin: 0 auto;
@@ -56,12 +58,34 @@ body.pub {
   justify-content: space-between;
   gap: 16px;
 }
-.pub-logo { color: #fff; font-size: 24px; font-weight: 700; text-decoration: none; }
-.pub-nav { display: flex; gap: 36px; }
-.pub-nav a { color: #fff; text-decoration: none; font-size: 15px; transition: color .2s; }
+
+.pub-logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.pub-nav {
+  display: flex;
+  gap: 36px;
+}
+
+.pub-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color .2s;
+}
+
 .pub-nav a:hover,
-.pub-nav a.active { color: var(--cyan-light); }
-.pub-nav a.active { font-weight: 600; }
+.pub-nav a.active {
+  color: var(--cyan-light);
+}
+
+.pub-nav a.active {
+  font-weight: 600;
+}
 
 /* ---------- Nút ---------- */
 .pub-btn {
@@ -77,9 +101,19 @@ body.pub {
   cursor: pointer;
   transition: background .2s;
 }
-.pub-btn:hover { background: var(--cyan-dark); }
-.pub-btn:disabled { background: #A0B8CC; cursor: not-allowed; }
-.pub .pub-btn { color: #fff; }
+
+.pub-btn:hover {
+  background: var(--cyan-dark);
+}
+
+.pub-btn:disabled {
+  background: #A0B8CC;
+  cursor: not-allowed;
+}
+
+.pub .pub-btn {
+  color: #fff;
+}
 
 /* ---------- Nội dung chính + tiêu đề giới thiệu ---------- */
 .pub-main {
@@ -89,9 +123,24 @@ body.pub {
   margin: 0 auto;
   padding: 0 24px 56px;
 }
-.pub-title { text-align: center; padding: 48px 24px 28px; }
-.pub-title h1 { margin: 0 0 8px; font-size: 38px; line-height: 1.15; color: var(--text); }
-.pub-title p { margin: 0; color: var(--muted); font-size: 17px; }
+
+.pub-title {
+  text-align: center;
+  padding: 48px 24px 28px;
+}
+
+.pub-title h1 {
+  margin: 0 0 8px;
+  font-size: 38px;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.pub-title p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+}
 
 /* ---------- Thẻ & biểu mẫu ---------- */
 .pub-card {
@@ -100,7 +149,12 @@ body.pub {
   box-shadow: var(--shadow);
   padding: 24px;
 }
-.pub-card h2 { margin: 0 0 14px; font-size: 19px; color: var(--text); }
+
+.pub-card h2 {
+  margin: 0 0 14px;
+  font-size: 19px;
+  color: var(--text);
+}
 
 .pub-form label {
   display: block;
@@ -108,6 +162,7 @@ body.pub {
   font-size: 14px;
   font-weight: 600;
 }
+
 .pub-form input,
 .pub-form textarea,
 .pub-form select {
@@ -119,17 +174,45 @@ body.pub {
   color: var(--text);
   font: 15px var(--font);
 }
-.pub-form textarea { resize: vertical; }
+
+.pub-form textarea {
+  resize: vertical;
+}
+
 .pub-form input:focus,
 .pub-form textarea:focus,
-.pub-form select:focus { outline: none; border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(10, 135, 168, .15); }
+.pub-form select:focus {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(10, 135, 168, .15);
+}
+
 .pub-form input.invalid,
-.pub-form textarea.invalid { border-color: #D93025; }
-.pub-form .error { display: block; min-height: 16px; margin-top: 5px; color: #D93025; font-size: 13px; }
-.pub-form .pub-btn { width: 100%; margin-top: 20px; padding: 13px; }
+.pub-form textarea.invalid {
+  border-color: #D93025;
+}
+
+.pub-form .error {
+  display: block;
+  min-height: 16px;
+  margin-top: 5px;
+  color: #D93025;
+  font-size: 13px;
+}
+
+.pub-form .pub-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+}
 
 /* ---------- Footer ---------- */
-.pub-footer { background: var(--navy-deep); color: #fff; font-size: 14px; }
+.pub-footer {
+  background: var(--navy-deep);
+  color: #fff;
+  font-size: 14px;
+}
+
 .pub-footer__grid {
   max-width: var(--maxw);
   margin: 0 auto;
@@ -138,10 +221,28 @@ body.pub {
   grid-template-columns: 1.2fr 1fr 1fr;
   gap: 40px;
 }
-.pub-footer h4 { margin: 0 0 12px; color: var(--cyan-light); font-size: 18px; }
-.pub-footer p { margin: 0 0 4px; }
-.pub-footer a { display: block; margin-bottom: 6px; color: #fff; text-decoration: none; }
-.pub-footer a:hover { text-decoration: underline; }
+
+.pub-footer h4 {
+  margin: 0 0 12px;
+  color: var(--cyan-light);
+  font-size: 18px;
+}
+
+.pub-footer p {
+  margin: 0 0 4px;
+}
+
+.pub-footer a {
+  display: block;
+  margin-bottom: 6px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.pub-footer a:hover {
+  text-decoration: underline;
+}
+
 .pub-footer__copy {
   border-top: 1px solid #12385A;
   text-align: center;
@@ -152,29 +253,85 @@ body.pub {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
-  .pub-title h1 { font-size: 30px; }
+  .pub-title h1 {
+    font-size: 30px;
+  }
 }
+
 @media (max-width: 700px) {
-  .pub-header__inner { flex-wrap: wrap; padding: 10px 16px; }
-  .pub-nav { order: 3; width: 100%; gap: 20px; }
-  .pub-main { padding: 0 16px 40px; }
-  .pub-footer__grid { grid-template-columns: 1fr; gap: 20px; }
+  .pub-header__inner {
+    flex-wrap: wrap;
+    padding: 10px 16px;
+  }
+
+  .pub-nav {
+    order: 3;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .pub-main {
+    padding: 0 16px 40px;
+  }
+
+  .pub-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 /* ---- Animate.css: cấu hình chung (class animate__* nằm trực tiếp trong HTML) ---- */
-:root { --animate-duration: .6s; }
+:root {
+  --animate-duration: .6s;
+}
+
 /* "backwards": giữ trạng thái ẩn trong lúc chờ delay, xong thì trả về trạng thái bình thường
    (không để lại transform/opacity làm hỏng hover, vị trí fixed...) */
-.animate__animated { animation-fill-mode: backwards; }
-[hidden] { display: none !important; }
+.animate__animated {
+  animation-fill-mode: backwards;
+}
+
+[hidden] {
+  display: none !important;
+}
 
 /* ---------- Logo ---------- */
-.pub-logo { display: inline-flex; align-items: center; gap: 10px; }
-.pub-logo img { display: block; width: 36px; height: 36px; flex: none; }
+.pub-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pub-logo img {
+  display: block;
+  width: 36px;
+  height: 36px;
+  flex: none;
+}
 
 /* ---------- Icon (SVG nét mảnh, cùng kiểu với các trang quản trị) ---------- */
-.i { width: 1.1em; height: 1.1em; flex: none; vertical-align: -0.18em; margin-right: .4em; }
-.i.i-r { margin: 0 0 0 .4em; }
+.i {
+  width: 1.1em;
+  height: 1.1em;
+  flex: none;
+  vertical-align: -0.18em;
+  margin-right: .4em;
+}
+
+.i.i-r {
+  margin: 0 0 0 .4em;
+}
+
 .pub-title h1 .i,
-#viewList > h1 .i { width: .8em; height: .8em; vertical-align: -0.04em; margin-right: .3em; }
-.pub-form label .i { width: 1em; height: 1em; vertical-align: -0.14em; }
+#viewList>h1 .i {
+  width: .8em;
+  height: .8em;
+  vertical-align: -0.04em;
+  margin-right: .3em;
+}
+
+.pub-form label .i {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.14em;
+}

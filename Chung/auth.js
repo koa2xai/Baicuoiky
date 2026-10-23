@@ -1,6 +1,6 @@
 (function () {
   var K = "sf_session";
-  var BASE = document.currentScript.src.replace(/[^\/]*$/, "");   // .../Chung/
+  var BASE = document.currentScript.src.replace(/[^\/]*$/, "");  
   var LOGIN = BASE + "../Trangdangnhap/login.html";
   function get() { try { var s = JSON.parse(localStorage.getItem(K)); return s && s.exp > Date.now() ? s : null } catch (e) { return null } }
   window.SFAuth = {

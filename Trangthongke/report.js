@@ -1,18 +1,9 @@
-/* =====================================================================
-   ShipFast – Báo cáo & Thống kê
-   Danh sách đơn hàng, khung thẻ thống kê, biểu đồ, chú giải đều nằm trong report.html.
-   File này chỉ làm việc tính toán và thao tác:
-   - đọc dữ liệu từ các dòng của bảng (thuộc tính data-*)
-   - lọc theo kỳ / mã đơn / trạng thái, phân trang
-   - điền số liệu vào thẻ, vẽ cột biểu đồ (nhân bản <template>), tô biểu đồ tròn
-   ===================================================================== */
 const GROUPS = ["delivered", "shipping", "pending", "incident"];   // thứ tự hiển thị
 
 const $ = id => document.getElementById(id);
 const $$ = s => Array.from(document.querySelectorAll(s));
 
 /* ---------- 1. Tiện ích ngày giờ, tiền tệ ---------- */
-// Ngày được xử lý dạng chữ "YYYY-MM-DD" nên không bị lệch múi giờ.
 function pad(n) { return String(n).padStart(2, "0"); }
 function addDays(dateStr, n) {
   const d = new Date(dateStr + "T00:00:00Z");

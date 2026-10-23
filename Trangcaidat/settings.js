@@ -1,4 +1,3 @@
-/* ShipFast – Cài đặt: nội dung nằm trong settings.html, file này chỉ điền thông tin phiên và xử lý hộp thoại đăng xuất */
 (function () {
   const S = SFAuth.get() || {};
   const $ = s => document.querySelector(s);

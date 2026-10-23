@@ -1,11 +1,4 @@
-/* =====================================================================
-   ShipFast – thao tác dùng chung cho các trang quản trị
-   (nội dung sidebar, header, thông báo đều nằm sẵn trong HTML; file này chỉ xử lý thao tác)
-   - nút ba gạch: thu gọn / mở sidebar (nhớ lựa chọn trong localStorage)
-   - lớp phủ + phím Esc đóng menu trên điện thoại
-   - hiện tên admin đang đăng nhập
-   - SFToast(): hiện thông báo; mọi phần tử có data-toast="..." bấm vào sẽ hiện thông báo đó
-   ===================================================================== */
+
 (function () {
   var B = document.body, S = window.SFAuth && SFAuth.get();
   var burger = document.getElementById("sfBurger");
@@ -35,10 +28,9 @@
   addEventListener("keydown", function (e) { if (e.key === "Escape" && B.classList.contains("open")) overlay.click(); });
   mob.addEventListener("change", function () { B.classList.remove("open"); sync(); });
   sync();
-  // bỏ lớp sf-init (tắt hiệu ứng chuyển) sau khi trang vẽ xong, để sidebar không "trượt" lúc mới tải
   requestAnimationFrame(function () { requestAnimationFrame(function () { B.classList.remove("sf-init"); }); });
 
-  // ---- Thông báo (toast) ----
+  // ---- Thông báo ----
   var toastEl = document.getElementById("toast"), timer;
   window.SFToast = function (text, isError) {
     if (!toastEl) return;

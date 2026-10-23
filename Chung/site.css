@@ -167,3 +167,7 @@ body.pub {
    (không để lại transform/opacity làm hỏng hover, vị trí fixed...) */
 .animate__animated { animation-fill-mode: backwards; }
 [hidden] { display: none !important; }
+
+/* ---------- Logo ---------- */
+.pub-logo { display: inline-flex; align-items: center; gap: 10px; }
+.pub-logo img { display: block; width: 36px; height: 36px; flex: none; }

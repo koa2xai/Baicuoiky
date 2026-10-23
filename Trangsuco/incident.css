@@ -665,3 +665,11 @@ h1.ttl {
 .no-margin {
    margin: 0;
 }
+/* ---------- Logo (ảnh + chữ) ---------- */
+.sf-logo { flex-direction: row; align-items: center; gap: 10px; }
+.sf-logo__img { display: block; width: 32px; height: 32px; flex: none; }
+.sf-logo__txt { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+@media (min-width: 821px) {
+  body.collapsed .sf-logo { justify-content: center; }
+  body.collapsed .sf-logo__txt { display: none; }
+}

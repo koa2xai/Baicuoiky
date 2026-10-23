@@ -77,7 +77,7 @@ function runFilter() {
   showList();
 }
 $("#go").onclick = runFilter;
-$("#q").onkeydown = e => e.key === "Enter" && runFilter();
+$("#q").addEventListener("keydown", e => { if (e.key === "Enter") runFilter(); });
 ["#fs", "#fx", "#fd"].forEach(s => $(s).onchange = runFilter);
 $("#clr").onclick = () => {
   Object.assign(filter, { q: "", sev: "", x: "", from: "" });
@@ -108,7 +108,7 @@ function runDetailSearch() {
   if (v) location.hash = "#/su-co/" + encodeURIComponent(v.toUpperCase());
 }
 $("#dgo").onclick = runDetailSearch;
-$("#dq").onkeydown = e => e.key === "Enter" && runDetailSearch();
+$("#dq").addEventListener("keydown", e => { if (e.key === "Enter") runDetailSearch(); });
 $("#dclr").onclick = $("#back").onclick = () => location.hash = "#/su-co";
 
 // chuyển giữa các sự cố của cùng một đơn

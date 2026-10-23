@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="ShipFast">
+  <defs>
+    <linearGradient id="sfg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22C1E3"/>
+      <stop offset="1" stop-color="#0A87A8"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="url(#sfg)"/>
+  <!-- đường tốc độ -->
+  <g stroke="#fff" stroke-width="2.4" stroke-linecap="round" opacity=".9">
+    <path d="M6 19h8"/><path d="M4 25h10"/><path d="M7 31h7"/>
+  </g>
+  <!-- kiện hàng -->
+  <path d="M30 11l11 6v14l-11 6-11-6V17z" fill="#fff"/>
+  <path d="M19 17l11 6 11-6M30 23v14" fill="none" stroke="#0A87A8" stroke-width="1.8" stroke-linejoin="round"/>
+</svg>

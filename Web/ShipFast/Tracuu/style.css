@@ -1,0 +1,180 @@
+/* ============================================================
+   style.css - Giao diện riêng của ShipFast (bổ sung cho Bootstrap)
+   ============================================================ */
+
+/* ---------- Màu và phông chữ chính ---------- */
+:root {
+  --yellow: #FFC800;   /* vàng thương hiệu */
+  --ink: #17191E;      /* đen xám dùng cho nền thanh menu */
+  --bs-body-font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  --bs-link-color: #8a6a00;
+  --bs-link-hover-color: #5c4700;
+}
+
+/* Tiêu đề và logo dùng phông đậm hơn */
+h1, h2, h3, .brand, .big {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Trang luôn cao bằng màn hình để chân trang nằm sát đáy */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+body > main { flex: 1 0 auto; }
+body > footer { margin-top: auto !important; }
+
+/* ---------- Nút chính màu vàng ---------- */
+.btn-primary {
+  --bs-btn-bg: var(--yellow);
+  --bs-btn-border-color: var(--yellow);
+  --bs-btn-color: var(--ink);
+  --bs-btn-hover-bg: #ffd53d;
+  --bs-btn-hover-border-color: #ffd53d;
+  --bs-btn-hover-color: var(--ink);
+  --bs-btn-active-bg: #e6b400;
+  --bs-btn-active-border-color: #e6b400;
+  --bs-btn-active-color: var(--ink);
+  font-weight: 600;
+}
+
+/* ---------- Thẻ ---------- */
+.card { border-radius: 12px; }
+
+/* ---------- Logo ---------- */
+.brand { color: #fff; text-decoration: none; font-size: 1.4rem; }
+.brand i { color: var(--yellow); }
+
+/* ---------- Thanh menu của khách ---------- */
+.sf-nav { background: var(--ink); }
+.sf-nav .nav-link { color: #c9ccd3; }
+.sf-nav .nav-link.on,
+.sf-nav .nav-link:hover { color: var(--yellow); }   /* mục đang chọn hoặc đang rê chuột */
+
+/* ---------- Khối đầu trang Tra cứu ---------- */
+.hero {
+  background: var(--ink);
+  color: #fff;
+  padding: 64px 0 72px;
+  /* viền sọc vàng đen phía dưới */
+  border-bottom: 14px solid;
+  border-image: repeating-linear-gradient(-45deg, var(--yellow) 0 14px, var(--ink) 14px 28px) 14;
+}
+.hero h1 { font-size: clamp(2rem, 5vw, 3.6rem); max-width: 15ch; }
+
+/* Ô nhập mã vận đơn */
+.tag-input {
+  display: flex;
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px;
+  max-width: 560px;
+  box-shadow: 6px 6px 0 var(--yellow);
+}
+.tag-input input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  padding: 10px 14px;
+  font: 600 1.05rem 'Be Vietnam Pro';
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+.tag-input input::placeholder { color: #8b90a0; font-weight: 400; letter-spacing: 0; }
+
+/* Các nút gợi ý "Thử: Đang giao..." */
+.chip {
+  display: inline-block;
+  border: 1px dashed #6b7080;
+  background: none;
+  color: #c9ccd3;
+  border-radius: 20px;
+  padding: 2px 12px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.chip:hover { border-color: var(--yellow); color: var(--yellow); }
+
+/* ---------- Ô chỉ số ---------- */
+.kpi { border-left: 6px solid var(--yellow); }
+.kpi .big { font-size: 1.9rem; line-height: 1.1; }
+
+/* ---------- Thanh các bước của đơn hàng ---------- */
+.route { position: relative; }
+.route-bar {                                   /* đường kẻ nối các bước */
+  position: absolute;
+  top: 22px;
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  background: var(--bs-border-color);
+}
+.route-bar i {                                 /* phần vàng = đã đi */
+  display: block;
+  height: 100%;
+  background: var(--yellow);
+}
+.route-steps { display: flex; position: relative; }
+.rs { flex: 1; text-align: center; font-size: 0.8rem; }
+.rs span {                                     /* vòng tròn chứa biểu tượng */
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 6px;
+  border-radius: 50%;
+  background: var(--bs-tertiary-bg);
+  border: 3px solid var(--bs-border-color);
+  font-size: 1.1rem;
+}
+.rs.on span { background: var(--yellow); border-color: var(--yellow); color: var(--ink); }
+
+/* ---------- Dòng thời gian hành trình ---------- */
+.tl {
+  list-style: none;
+  margin: 0;
+  padding-left: 18px;
+  border-left: 3px dashed var(--bs-border-color);
+}
+.tl li { position: relative; padding: 0 0 14px 14px; }
+.tl li:before {                                /* chấm tròn vàng đầu mỗi dòng */
+  content: '';
+  position: absolute;
+  left: -26px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--yellow);
+  border: 2px solid var(--bs-body-bg);
+}
+
+/* ---------- Bản đồ ở trang Tra cứu ---------- */
+.track-map { height: 360px; border-radius: 0.6rem; overflow: hidden; z-index: 0; }
+.trk-pin {                                     /* ghim tròn trên bản đồ */
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 14px;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+.trk-pin.a { background: #6c757d; }            /* điểm gửi */
+.trk-pin.b { background: #198754; }            /* điểm nhận */
+.trk-truck { background: var(--yellow); color: var(--ink); width: 38px; height: 38px; font-size: 18px; } /* vị trí hiện tại */
+.trk-truck.bad { background: #dc3545; color: #fff; }    /* đơn gặp sự cố */
+
+/* ---------- Bảng và biểu đồ ---------- */
+.table > :not(caption) > * > * { vertical-align: middle; }
+.chart-box { position: relative; height: 260px; }
+.chart-box.chart-short { height: 200px; }

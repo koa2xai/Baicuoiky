@@ -1,0 +1,71 @@
+/* ============================================================
+   style.css - Giao diện riêng của ShipFast (bổ sung cho Bootstrap)
+   ============================================================ */
+
+/* ---------- Màu và phông chữ chính ---------- */
+:root {
+  --yellow: #FFC800;   /* vàng thương hiệu */
+  --ink: #17191E;      /* đen xám dùng cho nền thanh menu */
+  --bs-body-font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  --bs-link-color: #8a6a00;
+  --bs-link-hover-color: #5c4700;
+}
+
+/* Tiêu đề và logo dùng phông đậm hơn */
+h1, h2, h3, .brand, .big {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Trang luôn cao bằng màn hình để chân trang nằm sát đáy */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+body > main { flex: 1 0 auto; }
+body > footer { margin-top: auto !important; }
+
+/* ---------- Nút chính màu vàng ---------- */
+.btn-primary {
+  --bs-btn-bg: var(--yellow);
+  --bs-btn-border-color: var(--yellow);
+  --bs-btn-color: var(--ink);
+  --bs-btn-hover-bg: #ffd53d;
+  --bs-btn-hover-border-color: #ffd53d;
+  --bs-btn-hover-color: var(--ink);
+  --bs-btn-active-bg: #e6b400;
+  --bs-btn-active-border-color: #e6b400;
+  --bs-btn-active-color: var(--ink);
+  font-weight: 600;
+}
+
+/* ---------- Thẻ ---------- */
+.card { border-radius: 12px; }
+
+/* ---------- Logo ---------- */
+.brand { color: #fff; text-decoration: none; font-size: 1.4rem; }
+.brand i { color: var(--yellow); }
+
+/* ---------- Khu vực quản trị (admin) ---------- */
+.adm { display: grid; grid-template-columns: 232px 1fr; flex: 1; min-height: 100vh; }  /* menu trái + nội dung */
+.adm aside {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 18px 12px;
+  background: var(--ink);
+}
+.adm aside .nav-link { color: #c9ccd3; border-radius: 8px; padding: 10px 12px; }
+.adm aside .nav-link.on { background: var(--yellow); color: var(--ink); font-weight: 600; }
+.adm aside .nav-link:hover:not(.on) { background: #262a33; }
+.adm main { min-width: 0; padding: 24px; background: var(--bs-tertiary-bg); }
+
+/* Màn hình nhỏ: menu trái chuyển lên đầu trang */
+@media (max-width: 991px) {
+  .adm { grid-template-columns: 1fr; }
+  .adm aside { position: static; height: auto; }
+  .adm aside nav { flex-direction: row !important; flex-wrap: wrap; }
+}

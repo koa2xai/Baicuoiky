@@ -1,7 +1,3 @@
-// ============================================================
-// Trang Đơn hàng (admin): tìm kiếm, lọc, đổi trạng thái, ghi nhận sự cố, xóa
-// ============================================================
-
 const session = SF.initPage('admin');                     // bắt buộc đăng nhập admin
 const incidentModal = new bootstrap.Modal($('incidentModal')); // hộp thoại "Ghi nhận sự cố"
 let searchText = '';                                      // chữ đang tìm

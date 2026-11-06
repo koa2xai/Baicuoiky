@@ -1,7 +1,3 @@
-// ============================================================
-// Trang Tạo đơn (khách hàng): đặt đơn mới, sau đó chuyển sang trang Tra cứu
-// ============================================================
-
 const session = SF.initPage('customer');                  // bắt buộc đăng nhập khách hàng
 const owner = session ? SF.db.users.find(function (u) { return u.username === session.user; }) : null;
 if (session && !owner) SF.logout();                       // tài khoản không còn tồn tại

@@ -1,7 +1,3 @@
-// ============================================================
-// Trang Yêu cầu hỗ trợ (admin): xem yêu cầu của khách và phản hồi
-// ============================================================
-
 const session = SF.initPage('admin');                     // bắt buộc đăng nhập admin
 const replyModal = new bootstrap.Modal($('replyModal'));  // hộp thoại phản hồi
 let replyTicketId = '';                                   // mã yêu cầu đang được phản hồi

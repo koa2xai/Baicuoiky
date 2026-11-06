@@ -1,8 +1,3 @@
-// ============================================================
-// Trang Hỗ trợ: khách gửi yêu cầu và xem phản hồi.
-// Mã yêu cầu đã gửi được nhớ trong localStorage để khách chưa đăng nhập vẫn xem lại được.
-// ============================================================
-
 const MY_TICKETS_KEY = 'sf3_my_tickets';
 const session = SF.initPage();
 

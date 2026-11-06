@@ -1,8 +1,3 @@
-// ============================================================
-// Trang Tra cứu (không cần đăng nhập): tra theo mã vận đơn hoặc số điện thoại.
-// Có 4 kiểu hiển thị: trang chủ, chi tiết một đơn, danh sách đơn theo số điện thoại, không tìm thấy.
-// ============================================================
-
 SF.initPage();
 const resultBox = $('result');
 const searchQuery = new URLSearchParams(location.search).get('q') || ''; // chữ người dùng đã nhập (nằm sau ?q= trên thanh địa chỉ)

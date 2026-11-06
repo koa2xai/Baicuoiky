@@ -1,7 +1,3 @@
-// ============================================================
-// Trang Đơn của tôi (khách hàng): danh sách đơn, hủy đơn và sửa hồ sơ
-// ============================================================
-
 const session = SF.initPage('customer');                  // bắt buộc đăng nhập khách hàng
 const user = session ? SF.db.users.find(function (u) { return u.username === session.user; }) : null;
 if (session && !user) SF.logout();                        // tài khoản không còn tồn tại

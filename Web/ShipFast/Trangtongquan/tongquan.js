@@ -1,7 +1,3 @@
-// ============================================================
-// Trang Tổng quan (admin): 4 chỉ số chính + 3 biểu đồ (thư viện Chart.js)
-// ============================================================
-
 const session = SF.initPage('admin');   // bắt buộc đăng nhập admin
 const SHOW_DAYS = 14;                   // biểu đồ doanh thu hiển thị 14 ngày gần nhất
 // Màu từng phần của biểu đồ tròn, theo đúng thứ tự các trạng thái trong SF.STATUS

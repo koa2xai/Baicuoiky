@@ -1,7 +1,3 @@
-// ============================================================
-// Trang Đăng nhập (dùng chung cho khách hàng và admin)
-// ============================================================
-
 // Sau khi đăng nhập, mỗi vai trò được chuyển tới trang riêng
 const HOME_PAGE = { admin: '../Trangtongquan/index.html', customer: '../Trangtaikhoan/index.html' };
 

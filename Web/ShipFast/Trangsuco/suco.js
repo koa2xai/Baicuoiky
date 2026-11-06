@@ -1,7 +1,3 @@
-// ============================================================
-// Trang Quản lý sự cố (admin): xem và cập nhật mức độ, trạng thái xử lý, ghi chú
-// ============================================================
-
 const session = SF.initPage('admin');                     // bắt buộc đăng nhập admin
 const editModal = new bootstrap.Modal($('editModal'));    // hộp thoại sửa sự cố
 let editingIncident = null;                               // sự cố đang được sửa
